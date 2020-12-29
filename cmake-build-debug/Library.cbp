@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="Library"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/wuqiquan/CLionProjects/C++作业/图书管理系统/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/wuqiquan/CLionProjects/C++作业/图书管理系统/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/wuqiquan/CLionProjects/C++作业/图书管理系统/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/wuqiquan/CLionProjects/C++作业/图书管理系统/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/wuqiquan/CLionProjects/C++作业/图书管理系统/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/wuqiquan/CLionProjects/C++作业/图书管理系统/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/wuqiquan/CLionProjects/C++作业/图书管理系统/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/wuqiquan/CLionProjects/C++作业/图书管理系统/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/wuqiquan/CLionProjects/C++作业/图书管理系统/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/wuqiquan/CLionProjects/C++作业/图书管理系统/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Administrator">
+				<Option output="/Users/wuqiquan/CLionProjects/C++作业/图书管理系统/cmake-build-debug/Administrator" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/wuqiquan/CLionProjects/C++作业/图书管理系统/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/wuqiquan/CLionProjects/C++作业/图书管理系统/cmake-build-debug/Makefile&quot;  VERBOSE=1 Administrator"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/wuqiquan/CLionProjects/C++作业/图书管理系统/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/wuqiquan/CLionProjects/C++作业/图书管理系统/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/wuqiquan/CLionProjects/C++作业/图书管理系统/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Administrator/fast">
+				<Option output="/Users/wuqiquan/CLionProjects/C++作业/图书管理系统/cmake-build-debug/Administrator" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/wuqiquan/CLionProjects/C++作业/图书管理系统/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/wuqiquan/CLionProjects/C++作业/图书管理系统/cmake-build-debug/Makefile&quot;  VERBOSE=1 Administrator/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/wuqiquan/CLionProjects/C++作业/图书管理系统/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/wuqiquan/CLionProjects/C++作业/图书管理系统/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/wuqiquan/CLionProjects/C++作业/图书管理系统/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="User">
+				<Option output="/Users/wuqiquan/CLionProjects/C++作业/图书管理系统/cmake-build-debug/User" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/wuqiquan/CLionProjects/C++作业/图书管理系统/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/wuqiquan/CLionProjects/C++作业/图书管理系统/cmake-build-debug/Makefile&quot;  VERBOSE=1 User"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/wuqiquan/CLionProjects/C++作业/图书管理系统/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/wuqiquan/CLionProjects/C++作业/图书管理系统/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/wuqiquan/CLionProjects/C++作业/图书管理系统/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="User/fast">
+				<Option output="/Users/wuqiquan/CLionProjects/C++作业/图书管理系统/cmake-build-debug/User" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/wuqiquan/CLionProjects/C++作业/图书管理系统/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/wuqiquan/CLionProjects/C++作业/图书管理系统/cmake-build-debug/Makefile&quot;  VERBOSE=1 User/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/wuqiquan/CLionProjects/C++作业/图书管理系统/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/wuqiquan/CLionProjects/C++作业/图书管理系统/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/wuqiquan/CLionProjects/C++作业/图书管理系统/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/wuqiquan/CLionProjects/C++作业/图书管理系统/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/wuqiquan/CLionProjects/C++作业/图书管理系统/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/wuqiquan/CLionProjects/C++作业/图书管理系统/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/wuqiquan/CLionProjects/C++作业/图书管理系统/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/wuqiquan/CLionProjects/C++作业/图书管理系统/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Library">
+				<Option output="/Users/wuqiquan/CLionProjects/C++作业/图书管理系统/cmake-build-debug/Library" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/wuqiquan/CLionProjects/C++作业/图书管理系统/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/wuqiquan/CLionProjects/C++作业/图书管理系统/cmake-build-debug/Makefile&quot;  VERBOSE=1 Library"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/wuqiquan/CLionProjects/C++作业/图书管理系统/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/wuqiquan/CLionProjects/C++作业/图书管理系统/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/wuqiquan/CLionProjects/C++作业/图书管理系统/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Library/fast">
+				<Option output="/Users/wuqiquan/CLionProjects/C++作业/图书管理系统/cmake-build-debug/Library" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/wuqiquan/CLionProjects/C++作业/图书管理系统/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/wuqiquan/CLionProjects/C++作业/图书管理系统/cmake-build-debug/Makefile&quot;  VERBOSE=1 Library/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/wuqiquan/CLionProjects/C++作业/图书管理系统/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/wuqiquan/CLionProjects/C++作业/图书管理系统/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/wuqiquan/CLionProjects/C++作业/图书管理系统/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Students">
+				<Option output="/Users/wuqiquan/CLionProjects/C++作业/图书管理系统/cmake-build-debug/Students" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/wuqiquan/CLionProjects/C++作业/图书管理系统/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/wuqiquan/CLionProjects/C++作业/图书管理系统/cmake-build-debug/Makefile&quot;  VERBOSE=1 Students"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/wuqiquan/CLionProjects/C++作业/图书管理系统/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/wuqiquan/CLionProjects/C++作业/图书管理系统/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/wuqiquan/CLionProjects/C++作业/图书管理系统/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Students/fast">
+				<Option output="/Users/wuqiquan/CLionProjects/C++作业/图书管理系统/cmake-build-debug/Students" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/wuqiquan/CLionProjects/C++作业/图书管理系统/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/wuqiquan/CLionProjects/C++作业/图书管理系统/cmake-build-debug/Makefile&quot;  VERBOSE=1 Students/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/wuqiquan/CLionProjects/C++作业/图书管理系统/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/wuqiquan/CLionProjects/C++作业/图书管理系统/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/wuqiquan/CLionProjects/C++作业/图书管理系统/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/wuqiquan/CLionProjects/C++作业/图书管理系统/Administrator.cpp">
+			<Option target="Administrator"/>
+		</Unit>
+		<Unit filename="/Users/wuqiquan/CLionProjects/C++作业/图书管理系统/Administrator.h">
+			<Option target="Administrator"/>
+		</Unit>
+		<Unit filename="/Users/wuqiquan/CLionProjects/C++作业/图书管理系统/CommonUser.cpp">
+			<Option target="Students"/>
+		</Unit>
+		<Unit filename="/Users/wuqiquan/CLionProjects/C++作业/图书管理系统/CommonUser.h">
+			<Option target="Students"/>
+		</Unit>
+		<Unit filename="/Users/wuqiquan/CLionProjects/C++作业/图书管理系统/Library.cpp">
+			<Option target="Library"/>
+		</Unit>
+		<Unit filename="/Users/wuqiquan/CLionProjects/C++作业/图书管理系统/Library.h">
+			<Option target="Library"/>
+		</Unit>
+		<Unit filename="/Users/wuqiquan/CLionProjects/C++作业/图书管理系统/User.cpp">
+			<Option target="User"/>
+		</Unit>
+		<Unit filename="/Users/wuqiquan/CLionProjects/C++作业/图书管理系统/User.h">
+			<Option target="User"/>
+		</Unit>
+		<Unit filename="/Users/wuqiquan/CLionProjects/C++作业/图书管理系统/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
