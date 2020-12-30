@@ -63,10 +63,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/wuqiquan/CLionProjects/C++作业/图书管理系统
+CMAKE_SOURCE_DIR = /Users/wuqiquan/CLionProjects/C++作业/Library
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/wuqiquan/CLionProjects/C++作业/图书管理系统/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/wuqiquan/CLionProjects/C++作业/Library/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/main.dir/depend.make
@@ -79,58 +79,28 @@ include CMakeFiles/main.dir/flags.make
 
 CMakeFiles/main.dir/main.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wuqiquan/CLionProjects/C++作业/图书管理系统/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/main.dir/main.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/main.cpp.o -c /Users/wuqiquan/CLionProjects/C++作业/图书管理系统/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wuqiquan/CLionProjects/C++作业/Library/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/main.dir/main.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/main.cpp.o -c /Users/wuqiquan/CLionProjects/C++作业/Library/main.cpp
 
 CMakeFiles/main.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/main.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wuqiquan/CLionProjects/C++作业/图书管理系统/main.cpp > CMakeFiles/main.dir/main.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wuqiquan/CLionProjects/C++作业/Library/main.cpp > CMakeFiles/main.dir/main.cpp.i
 
 CMakeFiles/main.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/main.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wuqiquan/CLionProjects/C++作业/图书管理系统/main.cpp -o CMakeFiles/main.dir/main.cpp.s
-
-CMakeFiles/main.dir/User.cpp.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/User.cpp.o: ../User.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wuqiquan/CLionProjects/C++作业/图书管理系统/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/main.dir/User.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/User.cpp.o -c /Users/wuqiquan/CLionProjects/C++作业/图书管理系统/User.cpp
-
-CMakeFiles/main.dir/User.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/User.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wuqiquan/CLionProjects/C++作业/图书管理系统/User.cpp > CMakeFiles/main.dir/User.cpp.i
-
-CMakeFiles/main.dir/User.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/User.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wuqiquan/CLionProjects/C++作业/图书管理系统/User.cpp -o CMakeFiles/main.dir/User.cpp.s
-
-CMakeFiles/main.dir/Administrator.cpp.o: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/Administrator.cpp.o: ../Administrator.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wuqiquan/CLionProjects/C++作业/图书管理系统/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/main.dir/Administrator.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/Administrator.cpp.o -c /Users/wuqiquan/CLionProjects/C++作业/图书管理系统/Administrator.cpp
-
-CMakeFiles/main.dir/Administrator.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/Administrator.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wuqiquan/CLionProjects/C++作业/图书管理系统/Administrator.cpp > CMakeFiles/main.dir/Administrator.cpp.i
-
-CMakeFiles/main.dir/Administrator.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/Administrator.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wuqiquan/CLionProjects/C++作业/图书管理系统/Administrator.cpp -o CMakeFiles/main.dir/Administrator.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wuqiquan/CLionProjects/C++作业/Library/main.cpp -o CMakeFiles/main.dir/main.cpp.s
 
 # Object files for target main
 main_OBJECTS = \
-"CMakeFiles/main.dir/main.cpp.o" \
-"CMakeFiles/main.dir/User.cpp.o" \
-"CMakeFiles/main.dir/Administrator.cpp.o"
+"CMakeFiles/main.dir/main.cpp.o"
 
 # External object files for target main
 main_EXTERNAL_OBJECTS =
 
 main: CMakeFiles/main.dir/main.cpp.o
-main: CMakeFiles/main.dir/User.cpp.o
-main: CMakeFiles/main.dir/Administrator.cpp.o
 main: CMakeFiles/main.dir/build.make
 main: CMakeFiles/main.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/wuqiquan/CLionProjects/C++作业/图书管理系统/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/wuqiquan/CLionProjects/C++作业/Library/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable main"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/main.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -143,6 +113,6 @@ CMakeFiles/main.dir/clean:
 .PHONY : CMakeFiles/main.dir/clean
 
 CMakeFiles/main.dir/depend:
-	cd /Users/wuqiquan/CLionProjects/C++作业/图书管理系统/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/wuqiquan/CLionProjects/C++作业/图书管理系统 /Users/wuqiquan/CLionProjects/C++作业/图书管理系统 /Users/wuqiquan/CLionProjects/C++作业/图书管理系统/cmake-build-debug /Users/wuqiquan/CLionProjects/C++作业/图书管理系统/cmake-build-debug /Users/wuqiquan/CLionProjects/C++作业/图书管理系统/cmake-build-debug/CMakeFiles/main.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/wuqiquan/CLionProjects/C++作业/Library/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/wuqiquan/CLionProjects/C++作业/Library /Users/wuqiquan/CLionProjects/C++作业/Library /Users/wuqiquan/CLionProjects/C++作业/Library/cmake-build-debug /Users/wuqiquan/CLionProjects/C++作业/Library/cmake-build-debug /Users/wuqiquan/CLionProjects/C++作业/Library/cmake-build-debug/CMakeFiles/main.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/main.dir/depend
 
