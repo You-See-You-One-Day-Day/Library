@@ -14,14 +14,14 @@
 
 
 class CommonUser : public User {
+    //构造函数
     CommonUser() {
-        printf("您正在创建")
+        printf("您正在创建普通用户");
 
     }
 
-    ~CommonUser() {
-
-    }
+    //析构函数
+    ~CommonUser() = default;
 
 public:
     //获取用户名
