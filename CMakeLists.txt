@@ -9,4 +9,3 @@ add_executable(Administrator Administrator.cpp)
 add_executable(Library Library.cpp)
 add_executable(main main.cpp)
 
-include_directories(.)

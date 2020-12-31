@@ -6,5 +6,5 @@ CXX_FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.1.sdk
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/Users/wuqiquan/CLionProjects/Library/. 
+CXX_INCLUDES = 
 
