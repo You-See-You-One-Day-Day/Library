@@ -20,3 +20,79 @@ ld: library not found for -lc++
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 
 
+Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+Compiler: /Library/Developer/CommandLineTools/usr/bin/cc 
+Build flags: 
+Id flags:  
+
+The output was:
+1
+ld: library not found for -lSystem
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /Library/Developer/CommandLineTools/usr/bin/c++ 
+Build flags: 
+Id flags:  
+
+The output was:
+1
+ld: library not found for -lc++
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Determining if the C compiler works failed with the following output:
+Change Dir: /Users/wuqiquan/CLionProjects/C++作业/Library/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_5c8a2/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_5c8a2.dir/build.make CMakeFiles/cmTC_5c8a2.dir/build
+Building C object CMakeFiles/cmTC_5c8a2.dir/testCCompiler.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -mmacosx-version-min=10.16   -o CMakeFiles/cmTC_5c8a2.dir/testCCompiler.c.o   -c /Users/wuqiquan/CLionProjects/C++作业/Library/cmake-build-debug/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_5c8a2
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5c8a2.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc   -mmacosx-version-min=10.16 -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_5c8a2.dir/testCCompiler.c.o  -o cmTC_5c8a2 
+ld: library not found for -lSystem
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make[1]: *** [cmTC_5c8a2] Error 1
+make: *** [cmTC_5c8a2/fast] Error 2
+
+
+
+Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+Compiler: /Library/Developer/CommandLineTools/usr/bin/cc 
+Build flags: 
+Id flags:  
+
+The output was:
+1
+ld: library not found for -lSystem
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /Library/Developer/CommandLineTools/usr/bin/c++ 
+Build flags: 
+Id flags:  
+
+The output was:
+1
+ld: library not found for -lc++
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Determining if the C compiler works failed with the following output:
+Change Dir: /Users/wuqiquan/CLionProjects/C++作业/Library/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make cmTC_ab909/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_ab909.dir/build.make CMakeFiles/cmTC_ab909.dir/build
+Building C object CMakeFiles/cmTC_ab909.dir/testCCompiler.c.o
+/Library/Developer/CommandLineTools/usr/bin/cc   -mmacosx-version-min=10.16   -o CMakeFiles/cmTC_ab909.dir/testCCompiler.c.o   -c /Users/wuqiquan/CLionProjects/C++作业/Library/cmake-build-debug/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_ab909
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ab909.dir/link.txt --verbose=1
+/Library/Developer/CommandLineTools/usr/bin/cc   -mmacosx-version-min=10.16 -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_ab909.dir/testCCompiler.c.o  -o cmTC_ab909 
+ld: library not found for -lSystem
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make[1]: *** [cmTC_ab909] Error 1
+make: *** [cmTC_ab909/fast] Error 2
+
+
+
