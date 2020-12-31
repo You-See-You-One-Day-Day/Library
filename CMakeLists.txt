@@ -5,6 +5,6 @@ set(CMAKE_CXX_STANDARD 20)
 
 add_executable(CommonUser CommonUser.cpp)
 add_executable(User User.cpp)
-add_executable(Administrator Administrator.cpp)
+add_executable(Administrator Administrator.h)
 add_executable(Library Library.cpp)
 add_executable(main main.cpp)

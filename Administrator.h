@@ -13,8 +13,6 @@
     管理员可以对图书信息进行修改
     管理员可以增加、删除、`搜索图书`
 */
-
-#include <iostream>
 #include <cstdio>
 #include "User.h"
 
@@ -26,7 +24,7 @@ class Administrator : public User {
     //构造函数
     Administrator() {
         char judge;
-        printf("您正在创建管理员用户\n");
+        printf("您正在创建管理员用户",judge);
         printf("请输入用户名： ");
         scanf("%s\n", &m_password);
         printf("是否使用默认密码123456？ Y/N\n");
