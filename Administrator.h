@@ -20,36 +20,49 @@
 #define LIBRARY_ADMINISTRATOR_H
 
 
-class Administrator : public User {
-    //构造函数
+class Administrator : public User { ;
+public:
+//构造函数
     Administrator() {
         char judge;
-        printf("您正在创建管理员用户",judge);
-        printf("请输入用户名： ");
-        scanf("%s\n", &m_password);
+        printf("您正在创建管理员用户\n");
+        printf("请输入用户名：\n");
+        scanf("%s", &m_password);
         printf("是否使用默认密码123456？ Y/N\n");
         scanf("%c\n", &judge);
         if (judge != 'N') {
-            std::string password;
-            printf("请输入密码： \n");
-            scanf("%s", &password);
-            printf("请确认密码： ");
+            char *initialPassword;
+            char *confirmPassword;
+            input:
+            printf("请输入密码：\n");
+            scanf("%c", &initialPassword);
+            printf("请确认密码：\n");
+            scanf("%c", &confirmPassword);
+            if (initialPassword != confirmPassword) {
+                printf("前后密码输入不一致，请重新输入\n");
+                goto input;
+            } else {
+                m_password = initialPassword;
+            }
 
+        } else {
+            printf("您选择使用默认密码\n");
+            m_password = "123456";
         }
-
-    };
-
-    //析构函数
-    ~Administrator() override {
-
+        printf("您已成功创建管理员用户\n");
+//        printf("您的用户名为： %s",m_username);
+//        printf("您的密码为： %s",m_password)
 
     }
 
+    //析构函数
+    ~Administrator() override = default;
+
     //管理员登录请求
-    void loginRequest() override;
+    void loginRequest();
 
     //管理员修改密码
-    void modifyPassword() override;
+    void modifyPassword();
 
     //管理员添加学校用户默认账号和密码
     void addCommonUser();

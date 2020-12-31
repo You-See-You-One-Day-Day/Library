@@ -20,10 +20,10 @@ public:
     std::string getPassword();
 
     //用户登录请求
-    virtual void loginRequest() = 0;
+//    virtual void loginRequest() = 0;
 
     //用户修改密码
-    virtual void modifyPassword() = 0;
+//    virtual void modifyPassword() = 0;
 
 
 protected:

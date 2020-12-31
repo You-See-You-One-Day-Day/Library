@@ -5,7 +5,8 @@
 //  Created by 王雨梦 on 2020/12/29.
 //
 
-#include <iostream>
+#include <cstdio>
+#include "Administrator.h"
 
 using namespace std;
 
@@ -15,11 +16,13 @@ void menu() {
 
 }
 
+void test01(){
+    auto *a = new Administrator;
+}
+
 int main() {
 
-    cout << " djasd";
-//    system("pause");
-    system("clear");
+    test01();
 
     return 0;
 }
