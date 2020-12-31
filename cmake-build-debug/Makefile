@@ -68,10 +68,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/wuqiquan/CLionProjects/C++作业/图书管理系统
+CMAKE_SOURCE_DIR = /Users/wuqiquan/CLionProjects/C++作业/Library
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/wuqiquan/CLionProjects/C++作业/图书管理系统/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/wuqiquan/CLionProjects/C++作业/Library/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -100,9 +100,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/wuqiquan/CLionProjects/C++作业/图书管理系统/cmake-build-debug/CMakeFiles /Users/wuqiquan/CLionProjects/C++作业/图书管理系统/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/wuqiquan/CLionProjects/C++作业/Library/cmake-build-debug/CMakeFiles /Users/wuqiquan/CLionProjects/C++作业/Library/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/wuqiquan/CLionProjects/C++作业/图书管理系统/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/wuqiquan/CLionProjects/C++作业/Library/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -129,6 +129,32 @@ preinstall/fast:
 depend:
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
+
+#=============================================================================
+# Target rules for targets named main
+
+# Build rule for target.
+main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 main
+.PHONY : main
+
+# fast build rule for target.
+main/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
+.PHONY : main/fast
+
+#=============================================================================
+# Target rules for targets named CommonUser
+
+# Build rule for target.
+CommonUser: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CommonUser
+.PHONY : CommonUser
+
+# fast build rule for target.
+CommonUser/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CommonUser.dir/build.make CMakeFiles/CommonUser.dir/build
+.PHONY : CommonUser/fast
 
 #=============================================================================
 # Target rules for targets named Administrator
@@ -169,19 +195,6 @@ Library/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Library.dir/build.make CMakeFiles/Library.dir/build
 .PHONY : Library/fast
 
-#=============================================================================
-# Target rules for targets named Students
-
-# Build rule for target.
-Students: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Students
-.PHONY : Students
-
-# fast build rule for target.
-Students/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Students.dir/build.make CMakeFiles/Students.dir/build
-.PHONY : Students/fast
-
 Administrator.o: Administrator.cpp.o
 
 .PHONY : Administrator.o
@@ -215,7 +228,7 @@ CommonUser.o: CommonUser.cpp.o
 
 # target to build an object file
 CommonUser.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Students.dir/build.make CMakeFiles/Students.dir/CommonUser.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CommonUser.dir/build.make CMakeFiles/CommonUser.dir/CommonUser.cpp.o
 .PHONY : CommonUser.cpp.o
 
 CommonUser.i: CommonUser.cpp.i
@@ -224,7 +237,7 @@ CommonUser.i: CommonUser.cpp.i
 
 # target to preprocess a source file
 CommonUser.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Students.dir/build.make CMakeFiles/Students.dir/CommonUser.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CommonUser.dir/build.make CMakeFiles/CommonUser.dir/CommonUser.cpp.i
 .PHONY : CommonUser.cpp.i
 
 CommonUser.s: CommonUser.cpp.s
@@ -233,7 +246,7 @@ CommonUser.s: CommonUser.cpp.s
 
 # target to generate assembly for a file
 CommonUser.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Students.dir/build.make CMakeFiles/Students.dir/CommonUser.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CommonUser.dir/build.make CMakeFiles/CommonUser.dir/CommonUser.cpp.s
 .PHONY : CommonUser.cpp.s
 
 Library.o: Library.cpp.o
@@ -290,6 +303,33 @@ User.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/User.dir/build.make CMakeFiles/User.dir/User.cpp.s
 .PHONY : User.cpp.s
 
+main.o: main.cpp.o
+
+.PHONY : main.o
+
+# target to build an object file
+main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.o
+.PHONY : main.cpp.o
+
+main.i: main.cpp.i
+
+.PHONY : main.i
+
+# target to preprocess a source file
+main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.i
+.PHONY : main.cpp.i
+
+main.s: main.cpp.s
+
+.PHONY : main.s
+
+# target to generate assembly for a file
+main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/main.cpp.s
+.PHONY : main.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -299,9 +339,10 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Administrator"
+	@echo "... CommonUser"
 	@echo "... Library"
-	@echo "... Students"
 	@echo "... User"
+	@echo "... main"
 	@echo "... Administrator.o"
 	@echo "... Administrator.i"
 	@echo "... Administrator.s"
@@ -314,6 +355,9 @@ help:
 	@echo "... User.o"
 	@echo "... User.i"
 	@echo "... User.s"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
 .PHONY : help
 
 
