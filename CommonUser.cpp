@@ -4,12 +4,12 @@
 
 #include "CommonUser.h"
 
+using namespace std;
+
 
 //获取用户名
-std::string getUsername();
 
 //获取密码
-std::string getPassword();
 
 //用户登录请求
 void loginRequest() {

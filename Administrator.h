@@ -47,7 +47,7 @@ public:
             cin >> confirmPassword;
 
             if (initialPassword != confirmPassword) {
-                printf("前后密码输入不一致，请重新输入\n");
+                cout << "前后密码输入不一致，请重新输入\n";
                 goto input;
             } else {
                 m_password = initialPassword;
@@ -64,7 +64,7 @@ public:
     }
 
     //析构函数
-    ~Administrator() override = default;
+    ~Administrator() = default;
 
     //管理员登录请求
     void loginRequest();
@@ -97,6 +97,7 @@ public:
 private:
     //管理员权限
     bool permission = true;
+//    static Number = 0;
 };
 
 
