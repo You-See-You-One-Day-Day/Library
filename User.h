@@ -3,18 +3,19 @@
 //
 
 //用户基类
-#include<iostream>
 
 #ifndef LIBRARY_USER_H
 #define LIBRARY_USER_H
 
+using namespace std;
+#include<iostream>
 
 class User {
 
 
 public:
     //获取用户名
-    std::string getUsername();
+    string getUsername();
 
     //获取密码
     std::string getPassword();
@@ -38,7 +39,7 @@ protected:
     }
 
     //析构函数
-    virtual ~User() {
+    ~User() {
 
     }
 };

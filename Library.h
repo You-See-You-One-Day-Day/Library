@@ -13,6 +13,8 @@
 
 
 class Library {
+
+public:
     //构造函数
     Library() = default;
 
@@ -20,12 +22,10 @@ class Library {
     ~Library() = default;
 
     //注册模块
-    void Register();
+    bool Register(int &AdministratorNumber, Administrator *head1, CommonUser *head2);
 
     //登录模块
-    void Login();
-
-    //
+    bool Login();
 };
 
 

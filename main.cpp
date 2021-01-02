@@ -1,12 +1,11 @@
-//
 //  main.cpp
 //  图书管理系统 图书管理
 //
 //  Created by 王雨梦 on 2020/12/29.
 //
 
-#include <cstdio>
-#include "Administrator.h"
+#include "Library.h"
+
 
 using namespace std;
 
@@ -16,13 +15,29 @@ void menu() {
 
 }
 
-void test01(){
-    auto *a = new Administrator;
+
+void Register(int AdministratorNumber) {
+    char a;
+    cout << "请问是否创建管理员用户    Y/N";
+    cin >> a;
+    if (a == 'Y') {
+        auto *AD = new Administrator;
+        FILE *fp = fopen("Administrator.bin","ab+");
+        fwrite(AD,sizeof(Administrator),1,fp);
+        fclose(fp);
+    } else {
+        auto *CU = new CommonUser;
+        FILE *fp = fopen("CommonUser.bin","ab+");
+        fwrite(CU,sizeof(CommonUser),1,fp);
+        fclose(fp);
+    }
+
 }
 
-int main() {
 
-    test01();
+int main() {
+    Register(2);
+
 
     return 0;
 }

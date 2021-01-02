@@ -4,14 +4,18 @@
 
 #include "User.h"
 
+std::string m_username;  //账号
+std::string m_password;  //密码
+
 //获取用户名
-std::string getUsername() {
+string User::getUsername() {
     std::string username = m_username;
     return username;
 }
 
 //获取密码
-std::string getPassword() {
+string User::getPassword() {
     std::string password = m_password;
     return password;
 }
+
