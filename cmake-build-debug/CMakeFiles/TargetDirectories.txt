@@ -5,3 +5,4 @@
 /Users/wuqiquan/CLionProjects/Library/cmake-build-debug/CMakeFiles/Administrator.dir
 /Users/wuqiquan/CLionProjects/Library/cmake-build-debug/CMakeFiles/User.dir
 /Users/wuqiquan/CLionProjects/Library/cmake-build-debug/CMakeFiles/Library.dir
+/Users/wuqiquan/CLionProjects/Library/cmake-build-debug/CMakeFiles/library.dir

@@ -6,15 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/Users/wuqiquan/CLionProjects/Library/Administrator.cpp
-Administrator.h
-/Users/wuqiquan/CLionProjects/Library/Administrator.h
-
-/Users/wuqiquan/CLionProjects/Library/Administrator.h
-cstdio
--
-string
--
+/Users/wuqiquan/CLionProjects/Library/User.cpp
 User.h
 /Users/wuqiquan/CLionProjects/Library/User.h
 

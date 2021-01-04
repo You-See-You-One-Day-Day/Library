@@ -69,50 +69,81 @@ CMAKE_SOURCE_DIR = /Users/wuqiquan/CLionProjects/Library
 CMAKE_BINARY_DIR = /Users/wuqiquan/CLionProjects/Library/cmake-build-debug
 
 # Include any dependencies generated for this target.
-include CMakeFiles/Library.dir/depend.make
+include CMakeFiles/library.dir/depend.make
 
 # Include the progress variables for this target.
-include CMakeFiles/Library.dir/progress.make
+include CMakeFiles/library.dir/progress.make
 
 # Include the compile flags for this target's objects.
-include CMakeFiles/Library.dir/flags.make
+include CMakeFiles/library.dir/flags.make
 
-CMakeFiles/Library.dir/Library.cpp.o: CMakeFiles/Library.dir/flags.make
-CMakeFiles/Library.dir/Library.cpp.o: ../Library.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wuqiquan/CLionProjects/Library/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Library.dir/Library.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Library.dir/Library.cpp.o -c /Users/wuqiquan/CLionProjects/Library/Library.cpp
+CMakeFiles/library.dir/Administrator.cpp.o: CMakeFiles/library.dir/flags.make
+CMakeFiles/library.dir/Administrator.cpp.o: ../Administrator.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wuqiquan/CLionProjects/Library/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/library.dir/Administrator.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/library.dir/Administrator.cpp.o -c /Users/wuqiquan/CLionProjects/Library/Administrator.cpp
 
-CMakeFiles/Library.dir/Library.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Library.dir/Library.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wuqiquan/CLionProjects/Library/Library.cpp > CMakeFiles/Library.dir/Library.cpp.i
+CMakeFiles/library.dir/Administrator.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/library.dir/Administrator.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wuqiquan/CLionProjects/Library/Administrator.cpp > CMakeFiles/library.dir/Administrator.cpp.i
 
-CMakeFiles/Library.dir/Library.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Library.dir/Library.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wuqiquan/CLionProjects/Library/Library.cpp -o CMakeFiles/Library.dir/Library.cpp.s
+CMakeFiles/library.dir/Administrator.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/library.dir/Administrator.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wuqiquan/CLionProjects/Library/Administrator.cpp -o CMakeFiles/library.dir/Administrator.cpp.s
 
-# Object files for target Library
-Library_OBJECTS = \
-"CMakeFiles/Library.dir/Library.cpp.o"
+CMakeFiles/library.dir/CommonUser.cpp.o: CMakeFiles/library.dir/flags.make
+CMakeFiles/library.dir/CommonUser.cpp.o: ../CommonUser.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wuqiquan/CLionProjects/Library/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/library.dir/CommonUser.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/library.dir/CommonUser.cpp.o -c /Users/wuqiquan/CLionProjects/Library/CommonUser.cpp
 
-# External object files for target Library
-Library_EXTERNAL_OBJECTS =
+CMakeFiles/library.dir/CommonUser.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/library.dir/CommonUser.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wuqiquan/CLionProjects/Library/CommonUser.cpp > CMakeFiles/library.dir/CommonUser.cpp.i
 
-Library: CMakeFiles/Library.dir/Library.cpp.o
-Library: CMakeFiles/Library.dir/build.make
-Library: CMakeFiles/Library.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/wuqiquan/CLionProjects/Library/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable Library"
-	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Library.dir/link.txt --verbose=$(VERBOSE)
+CMakeFiles/library.dir/CommonUser.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/library.dir/CommonUser.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wuqiquan/CLionProjects/Library/CommonUser.cpp -o CMakeFiles/library.dir/CommonUser.cpp.s
+
+CMakeFiles/library.dir/User.cpp.o: CMakeFiles/library.dir/flags.make
+CMakeFiles/library.dir/User.cpp.o: ../User.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wuqiquan/CLionProjects/Library/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/library.dir/User.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/library.dir/User.cpp.o -c /Users/wuqiquan/CLionProjects/Library/User.cpp
+
+CMakeFiles/library.dir/User.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/library.dir/User.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wuqiquan/CLionProjects/Library/User.cpp > CMakeFiles/library.dir/User.cpp.i
+
+CMakeFiles/library.dir/User.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/library.dir/User.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wuqiquan/CLionProjects/Library/User.cpp -o CMakeFiles/library.dir/User.cpp.s
+
+# Object files for target library
+library_OBJECTS = \
+"CMakeFiles/library.dir/Administrator.cpp.o" \
+"CMakeFiles/library.dir/CommonUser.cpp.o" \
+"CMakeFiles/library.dir/User.cpp.o"
+
+# External object files for target library
+library_EXTERNAL_OBJECTS =
+
+liblibrary.a: CMakeFiles/library.dir/Administrator.cpp.o
+liblibrary.a: CMakeFiles/library.dir/CommonUser.cpp.o
+liblibrary.a: CMakeFiles/library.dir/User.cpp.o
+liblibrary.a: CMakeFiles/library.dir/build.make
+liblibrary.a: CMakeFiles/library.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/wuqiquan/CLionProjects/Library/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX static library liblibrary.a"
+	$(CMAKE_COMMAND) -P CMakeFiles/library.dir/cmake_clean_target.cmake
+	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/library.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-CMakeFiles/Library.dir/build: Library
+CMakeFiles/library.dir/build: liblibrary.a
 
-.PHONY : CMakeFiles/Library.dir/build
+.PHONY : CMakeFiles/library.dir/build
 
-CMakeFiles/Library.dir/clean:
-	$(CMAKE_COMMAND) -P CMakeFiles/Library.dir/cmake_clean.cmake
-.PHONY : CMakeFiles/Library.dir/clean
+CMakeFiles/library.dir/clean:
+	$(CMAKE_COMMAND) -P CMakeFiles/library.dir/cmake_clean.cmake
+.PHONY : CMakeFiles/library.dir/clean
 
-CMakeFiles/Library.dir/depend:
-	cd /Users/wuqiquan/CLionProjects/Library/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/wuqiquan/CLionProjects/Library /Users/wuqiquan/CLionProjects/Library /Users/wuqiquan/CLionProjects/Library/cmake-build-debug /Users/wuqiquan/CLionProjects/Library/cmake-build-debug /Users/wuqiquan/CLionProjects/Library/cmake-build-debug/CMakeFiles/Library.dir/DependInfo.cmake --color=$(COLOR)
-.PHONY : CMakeFiles/Library.dir/depend
+CMakeFiles/library.dir/depend:
+	cd /Users/wuqiquan/CLionProjects/Library/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/wuqiquan/CLionProjects/Library /Users/wuqiquan/CLionProjects/Library /Users/wuqiquan/CLionProjects/Library/cmake-build-debug /Users/wuqiquan/CLionProjects/Library/cmake-build-debug /Users/wuqiquan/CLionProjects/Library/cmake-build-debug/CMakeFiles/library.dir/DependInfo.cmake --color=$(COLOR)
+.PHONY : CMakeFiles/library.dir/depend
 

@@ -195,6 +195,19 @@ Library/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Library.dir/build.make CMakeFiles/Library.dir/build
 .PHONY : Library/fast
 
+#=============================================================================
+# Target rules for targets named library
+
+# Build rule for target.
+library: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 library
+.PHONY : library
+
+# fast build rule for target.
+library/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/library.dir/build.make CMakeFiles/library.dir/build
+.PHONY : library/fast
+
 Administrator.o: Administrator.cpp.o
 
 .PHONY : Administrator.o
@@ -202,6 +215,7 @@ Administrator.o: Administrator.cpp.o
 # target to build an object file
 Administrator.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Administrator.dir/build.make CMakeFiles/Administrator.dir/Administrator.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/library.dir/build.make CMakeFiles/library.dir/Administrator.cpp.o
 .PHONY : Administrator.cpp.o
 
 Administrator.i: Administrator.cpp.i
@@ -211,6 +225,7 @@ Administrator.i: Administrator.cpp.i
 # target to preprocess a source file
 Administrator.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Administrator.dir/build.make CMakeFiles/Administrator.dir/Administrator.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/library.dir/build.make CMakeFiles/library.dir/Administrator.cpp.i
 .PHONY : Administrator.cpp.i
 
 Administrator.s: Administrator.cpp.s
@@ -220,6 +235,7 @@ Administrator.s: Administrator.cpp.s
 # target to generate assembly for a file
 Administrator.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Administrator.dir/build.make CMakeFiles/Administrator.dir/Administrator.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/library.dir/build.make CMakeFiles/library.dir/Administrator.cpp.s
 .PHONY : Administrator.cpp.s
 
 CommonUser.o: CommonUser.cpp.o
@@ -229,6 +245,7 @@ CommonUser.o: CommonUser.cpp.o
 # target to build an object file
 CommonUser.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CommonUser.dir/build.make CMakeFiles/CommonUser.dir/CommonUser.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/library.dir/build.make CMakeFiles/library.dir/CommonUser.cpp.o
 .PHONY : CommonUser.cpp.o
 
 CommonUser.i: CommonUser.cpp.i
@@ -238,6 +255,7 @@ CommonUser.i: CommonUser.cpp.i
 # target to preprocess a source file
 CommonUser.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CommonUser.dir/build.make CMakeFiles/CommonUser.dir/CommonUser.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/library.dir/build.make CMakeFiles/library.dir/CommonUser.cpp.i
 .PHONY : CommonUser.cpp.i
 
 CommonUser.s: CommonUser.cpp.s
@@ -247,6 +265,7 @@ CommonUser.s: CommonUser.cpp.s
 # target to generate assembly for a file
 CommonUser.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CommonUser.dir/build.make CMakeFiles/CommonUser.dir/CommonUser.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/library.dir/build.make CMakeFiles/library.dir/CommonUser.cpp.s
 .PHONY : CommonUser.cpp.s
 
 Library.o: Library.cpp.o
@@ -283,6 +302,7 @@ User.o: User.cpp.o
 # target to build an object file
 User.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/User.dir/build.make CMakeFiles/User.dir/User.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/library.dir/build.make CMakeFiles/library.dir/User.cpp.o
 .PHONY : User.cpp.o
 
 User.i: User.cpp.i
@@ -292,6 +312,7 @@ User.i: User.cpp.i
 # target to preprocess a source file
 User.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/User.dir/build.make CMakeFiles/User.dir/User.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/library.dir/build.make CMakeFiles/library.dir/User.cpp.i
 .PHONY : User.cpp.i
 
 User.s: User.cpp.s
@@ -301,6 +322,7 @@ User.s: User.cpp.s
 # target to generate assembly for a file
 User.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/User.dir/build.make CMakeFiles/User.dir/User.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/library.dir/build.make CMakeFiles/library.dir/User.cpp.s
 .PHONY : User.cpp.s
 
 main.o: main.cpp.o
@@ -342,6 +364,7 @@ help:
 	@echo "... CommonUser"
 	@echo "... Library"
 	@echo "... User"
+	@echo "... library"
 	@echo "... main"
 	@echo "... Administrator.o"
 	@echo "... Administrator.i"

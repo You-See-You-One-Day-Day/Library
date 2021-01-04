@@ -7,41 +7,37 @@
 #ifndef LIBRARY_USER_H
 #define LIBRARY_USER_H
 
-using namespace std;
 #include<iostream>
+
+using namespace std;
 
 class User {
 
 
 public:
-    //获取用户名
-    string getUsername();
-
-    //获取密码
-    std::string getPassword();
-
-    //用户登录请求
-//    virtual void loginRequest() = 0;
-
-    //用户修改密码
-//    virtual void modifyPassword() = 0;
-
-
-protected:
-    std::string m_username;  //账号
-    std::string m_password;  //密码
-    bool m_permission;  //管理员权限
-    bool Online;  //在线状态
-
     //构造函数
-    User() {
-
-    }
+    User() = default;
 
     //析构函数
-    ~User() {
+    ~User() = default;
 
-    }
+    //获取用户名
+    [[nodiscard]] string getUsername() const;
+
+    //获取密码
+    [[nodiscard]] string getPassword() const;
+
+    //
+
+    //修改密码
+    virtual void modifyPassword() = 0;
+
+    bool Online{};  //在线状态
+protected:
+    string m_username;  //账号
+    string m_password;  //密码
+    bool m_permission{};  //管理员权限
+
 };
 
 

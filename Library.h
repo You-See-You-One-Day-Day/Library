@@ -22,10 +22,9 @@ public:
     ~Library() = default;
 
     //注册模块
-    bool Register(int &AdministratorNumber, Administrator *head1, CommonUser *head2);
 
     //登录模块
-    bool Login();
+
 };
 
 
