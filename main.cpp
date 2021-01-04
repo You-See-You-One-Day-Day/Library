@@ -10,7 +10,7 @@ using namespace std;
 //函数声明
 int getAdminNum();
 
-void Register(int);
+void RegisterMenu();
 
 void Login(CommonUser &);
 
@@ -18,10 +18,6 @@ void Login(Administrator &);
 
 //测试函数
 
-void RegisterMenu() {
-    int num = getAdminNum();
-    Register(num);
-}
 
 
 auto LoginMenu(User *pUser) {
@@ -67,27 +63,28 @@ int main() {
 }
 
 //注册模块
-void Register(int) {
-    int a, AdministratorNumber = getAdminNum();
+void RegisterMenu() {
+    int a;
+//  int AdministratorNumber = getAdminNum();
     registerStart:
     cout << "请选择注册用户类型：1管理员，2普通用户\n";
     cin >> a;
     switch (a) {
         case 1 : {
-            if (AdministratorNumber <= 4) {
-                auto *AD = new Administrator(AdministratorNumber);
-                FILE *fp = fopen("Administrator.bin", "ab+");
-                fwrite(AD, sizeof(Administrator), 1, fp);
-                fclose(fp);
-                cout << "现在已有" << AdministratorNumber << "位管理员\n";
-            } else {
-                cout << "管理员人数超过" << AdministratorNumber << "位，拒绝继续创建\n";
-            }
+//            if (AdministratorNumber <= 4) {
+            auto *AD = new Administrator(a);
+            FILE *fp = fopen("Administrator.bin", "ab+");
+            fwrite(AD, sizeof(Administrator), 1, fp);
+            fclose(fp);
+//                cout << "现在已有" << AdministratorNumber << "位管理员\n";
+//            } else {
+//                cout << "管理员人数超过" << AdministratorNumber << "位，拒绝继续创建\n";
+//            }
             break;
         }
 
         case 2: {
-            auto *CU = new CommonUser(AdministratorNumber);
+            auto *CU = new CommonUser(a);
             FILE *fp = fopen("CommonUser.bin", "ab+");
             fwrite(CU, sizeof(CommonUser), 1, fp);
             fclose(fp);
