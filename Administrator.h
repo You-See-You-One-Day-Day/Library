@@ -16,8 +16,8 @@
 
 
 
-#ifndef LIBRARY_ADMINISTRATOR_H
-#define LIBRARY_ADMINISTRATOR_H
+#ifndef ADMINISTRATOR_H
+#define ADMINISTRATOR_H
 
 #include<cstdio>
 #include<string>
@@ -28,7 +28,7 @@ using namespace std;
 class Administrator : public User { ;
 public:
 //构造函数
-    Administrator() {
+    explicit Administrator(int) {
         char judge;
         cout << "您正在创建管理员用户\n";
 
@@ -63,14 +63,14 @@ public:
 
     }
 
+    Administrator() = default;
+
     //析构函数
     ~Administrator() = default;
 
-    //管理员登录请求
-    void loginRequest();
 
     //管理员修改密码
-    void modifyPassword();
+    void modifyPassword() override;
 
     //管理员添加学校用户默认账号和密码
     void addCommonUser();
@@ -97,8 +97,8 @@ public:
 private:
     //管理员权限
     bool permission = true;
-//    static Number = 0;
 };
 
 
-#endif //LIBRARY_ADMINISTRATOR_H
+#endif //ADMINISTRATOR_H
+

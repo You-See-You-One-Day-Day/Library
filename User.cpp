@@ -3,19 +3,19 @@
 //
 
 #include "User.h"
+using namespace std;
 
-std::string m_username;  //账号
-std::string m_password;  //密码
+
 
 //获取用户名
-string User::getUsername() {
-    std::string username = m_username;
+string User::getUsername() const {
+    string username = m_username;
     return username;
 }
 
 //获取密码
-string User::getPassword() {
-    std::string password = m_password;
+string User::getPassword() const {
+    string password = m_password;
     return password;
 }
 

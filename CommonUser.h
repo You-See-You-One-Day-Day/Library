@@ -11,16 +11,19 @@
 
 using namespace std;
 
-#ifndef LIBRARY_STUDENTS_H
-#define LIBRARY_STUDENTS_H
+#ifndef COMMON_USER_H
+#define COMMON_USER_H
 
 
 class CommonUser : public User {
 
+public:
     //构造函数
-    CommonUser() {
+    CommonUser() = default;;
+
+    explicit CommonUser(int) {
         char judge;
-        cout << "您正在创学校用户\n";
+        cout << "您正在创建普通用户\n";
 
         cout << "请输入用户名： \n";
         cin >> m_username;
@@ -47,22 +50,19 @@ class CommonUser : public User {
             cout << "您选择使用默认密码\n";
             m_password = "123456";
         }
-        cout << "您已成功创建学校用户\n";
+        cout << "您已成功创建普通用户\n";
         cout << "您的用户名为： " << m_username << endl;
         cout << "您的密码为： " << m_password << endl;
 
     }
 
+
     //析构函数
     ~CommonUser() = default;
 
-public:
-
-    //普通用户登录请求
-    void loginRequest();
 
     //普通用户修改密码
-    void modifyPassword();
+    void modifyPassword() override;
 
     //学校用户搜索图书
     void searchBook();
@@ -77,13 +77,7 @@ public:
     void viewRecord();
 
 
-private:
-    string m_username;  //账号
-    string m_password;  //密码
-    bool m_permission;  //管理员权限
-    bool Online;
-
 };
 
 
-#endif //LIBRARY_STUDENTS_H
+#endif //COMMON_USER_H
