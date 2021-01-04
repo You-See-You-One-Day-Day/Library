@@ -57,4 +57,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/Administrator.dir/DependInfo.cmake"
   "CMakeFiles/User.dir/DependInfo.cmake"
   "CMakeFiles/Library.dir/DependInfo.cmake"
+  "CMakeFiles/library.dir/DependInfo.cmake"
   )

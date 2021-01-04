@@ -247,18 +247,64 @@
 					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/wuqiquan/CLionProjects/Library/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="library">
+				<Option output="/Users/wuqiquan/CLionProjects/Library/cmake-build-debug/liblibrary.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/wuqiquan/CLionProjects/Library/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/wuqiquan/CLionProjects/Library/cmake-build-debug/Makefile&quot;  VERBOSE=1 library"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/wuqiquan/CLionProjects/Library/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/wuqiquan/CLionProjects/Library/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/wuqiquan/CLionProjects/Library/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="library/fast">
+				<Option output="/Users/wuqiquan/CLionProjects/Library/cmake-build-debug/liblibrary.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/wuqiquan/CLionProjects/Library/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/wuqiquan/CLionProjects/Library/cmake-build-debug/Makefile&quot;  VERBOSE=1 library/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/wuqiquan/CLionProjects/Library/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/wuqiquan/CLionProjects/Library/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/wuqiquan/CLionProjects/Library/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 		</Build>
 		<Unit filename="/Users/wuqiquan/CLionProjects/Library/Administrator.cpp">
 			<Option target="Administrator"/>
+			<Option target="library"/>
 		</Unit>
 		<Unit filename="/Users/wuqiquan/CLionProjects/Library/Administrator.h">
 			<Option target="Administrator"/>
+			<Option target="library"/>
 		</Unit>
 		<Unit filename="/Users/wuqiquan/CLionProjects/Library/CommonUser.cpp">
 			<Option target="CommonUser"/>
+			<Option target="library"/>
 		</Unit>
 		<Unit filename="/Users/wuqiquan/CLionProjects/Library/CommonUser.h">
 			<Option target="CommonUser"/>
+			<Option target="library"/>
 		</Unit>
 		<Unit filename="/Users/wuqiquan/CLionProjects/Library/Library.cpp">
 			<Option target="Library"/>
@@ -268,9 +314,11 @@
 		</Unit>
 		<Unit filename="/Users/wuqiquan/CLionProjects/Library/User.cpp">
 			<Option target="User"/>
+			<Option target="library"/>
 		</Unit>
 		<Unit filename="/Users/wuqiquan/CLionProjects/Library/User.h">
 			<Option target="User"/>
+			<Option target="library"/>
 		</Unit>
 		<Unit filename="/Users/wuqiquan/CLionProjects/Library/main.cpp">
 			<Option target="main"/>
