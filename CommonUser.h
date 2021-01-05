@@ -19,7 +19,7 @@ class CommonUser : public User {
 
 public:
     //构造函数
-    CommonUser() = default;;
+    CommonUser() = default;
 
     explicit CommonUser(int) {
         char judge;

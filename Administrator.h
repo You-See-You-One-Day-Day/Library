@@ -73,7 +73,7 @@ public:
     void modifyPassword() override;
 
     //管理员添加学校用户默认账号和密码
-    void addCommonUser();
+    static void addCommonUser();
 
     //管理员删除学校用户默认账号和密码
     void deleteCommonUser();

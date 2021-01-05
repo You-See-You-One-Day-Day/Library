@@ -3,6 +3,7 @@
 //
 
 #include "Administrator.h"
+#include "CommonUser.h"
 
 ////获取用户名
 //string Administrator::getUsername() {
@@ -17,7 +18,7 @@ void Administrator::modifyPassword() {
     start:
     cout << "请输入原密码：\n";
     cin >> originPassword;
-    if (m_password== originPassword) {
+    if (m_password == originPassword) {
         cout << "输入正确，请输入修改后的密码：\n";
         modify:
         cin >> modifyPassword;
@@ -25,7 +26,7 @@ void Administrator::modifyPassword() {
         cin >> confirmPassword;
         if (modifyPassword == confirmPassword) {
             m_password = modifyPassword;
-            auto ap =new Administrator();
+            auto ap = new Administrator();
             FILE *fp = fopen("Administrator.bin", "rb+");
             while (true) {
                 if (!fread(ap, sizeof(Administrator), 1, fp)) {
@@ -35,9 +36,11 @@ void Administrator::modifyPassword() {
                 if (ap->getUsername() == m_username) {
                     *ap = *this;
                     ap->m_password = modifyPassword;
-                    fwrite(ap,sizeof(Administrator),1,fp);
+                    fseek(fp, -int(sizeof(Administrator)), SEEK_CUR);
+                    fwrite(ap, sizeof(Administrator), 1, fp);
                     delete ap;
                     break;
+
                 }
             }
             fclose(fp);
@@ -65,7 +68,10 @@ void Administrator::modifyPassword() {
 
 //管理员添加学校用户默认账号和密码
 void Administrator::addCommonUser() {
-
+    auto c = new CommonUser(1);
+    FILE *fp = fopen("CommonUser.bin", "ab+");
+    fwrite(c, sizeof(CommonUser), 1, fp);
+    fclose(fp);
 }
 
 //管理员删除学校用户默认账号和密码

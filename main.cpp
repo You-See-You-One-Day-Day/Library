@@ -54,10 +54,11 @@ void test03(Administrator &a) {
 //主函数
 int main() {
 //    test01();
-    RegisterMenu();
+    int AdministratorNum = getAdminNum();
+//    RegisterMenu();
     User *a = new Administrator;
      a = LoginMenu(a);
-    a->modifyPassword();
+//    a->modifyPassword();
     LoginMenu(a);
     return 0;
 }
