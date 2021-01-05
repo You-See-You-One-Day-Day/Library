@@ -8,18 +8,15 @@
 #include <iostream>
 using namespace std;
 
-void menu()
+void book()
 {
-    cout << "---------------【name 图书管理系统】--------------" << endl ;
-    cout << "\t\t1." << endl ;
+    cout<<"dhsahdsja";
+    systen ("clear");
     
 }
 
 int main() {
-    
-    cout << " djasd";
-//    system("pause");
-    system("clear");
+
     
     return 0;
 }
