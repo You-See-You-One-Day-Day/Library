@@ -55,10 +55,10 @@ void test03(Administrator &a) {
 int main() {
 //    test01();
     int AdministratorNum = getAdminNum();
-//    RegisterMenu();
+    RegisterMenu();
     User *a = new Administrator;
      a = LoginMenu(a);
-//    a->modifyPassword();
+    a->modifyPassword();
     LoginMenu(a);
     return 0;
 }

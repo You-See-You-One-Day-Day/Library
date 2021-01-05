@@ -20,6 +20,10 @@ string
 User.h
 /Users/wuqiquan/CLionProjects/Library/User.h
 
+/Users/wuqiquan/CLionProjects/Library/CommonUser.cpp
+CommonUser.h
+/Users/wuqiquan/CLionProjects/Library/CommonUser.h
+
 /Users/wuqiquan/CLionProjects/Library/CommonUser.h
 cstdio
 -
