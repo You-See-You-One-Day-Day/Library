@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/wuqiquan/CLionProjects/Library/Administrator.cpp" "/Users/wuqiquan/CLionProjects/Library/cmake-build-debug/CMakeFiles/library.dir/Administrator.cpp.o"
   "/Users/wuqiquan/CLionProjects/Library/CommonUser.cpp" "/Users/wuqiquan/CLionProjects/Library/cmake-build-debug/CMakeFiles/library.dir/CommonUser.cpp.o"
+  "/Users/wuqiquan/CLionProjects/Library/Library.cpp" "/Users/wuqiquan/CLionProjects/Library/cmake-build-debug/CMakeFiles/library.dir/Library.cpp.o"
   "/Users/wuqiquan/CLionProjects/Library/User.cpp" "/Users/wuqiquan/CLionProjects/Library/cmake-build-debug/CMakeFiles/library.dir/User.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")

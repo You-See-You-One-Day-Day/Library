@@ -308,9 +308,11 @@
 		</Unit>
 		<Unit filename="/Users/wuqiquan/CLionProjects/Library/Library.cpp">
 			<Option target="Library"/>
+			<Option target="library"/>
 		</Unit>
 		<Unit filename="/Users/wuqiquan/CLionProjects/Library/Library.h">
 			<Option target="Library"/>
+			<Option target="library"/>
 		</Unit>
 		<Unit filename="/Users/wuqiquan/CLionProjects/Library/User.cpp">
 			<Option target="User"/>

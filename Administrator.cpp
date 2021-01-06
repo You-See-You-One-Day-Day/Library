@@ -5,10 +5,6 @@
 #include "Administrator.h"
 #include "CommonUser.h"
 
-////获取用户名
-//string Administrator::getUsername() {
-//    return std::string(username);
-//}
 
 //管理员修改密码
 void Administrator::modifyPassword() {
@@ -40,7 +36,6 @@ void Administrator::modifyPassword() {
                     fwrite(ap, sizeof(Administrator), 1, fp);
                     delete ap;
                     break;
-
                 }
             }
             fclose(fp);
@@ -68,21 +63,59 @@ void Administrator::modifyPassword() {
 
 //管理员添加学校用户默认账号和密码
 void Administrator::addCommonUser() {
-    auto c = new CommonUser(1);
+    auto CU = new CommonUser(1);
     FILE *fp = fopen("CommonUser.bin", "ab+");
-    fwrite(c, sizeof(CommonUser), 1, fp);
+    fwrite(CU, sizeof(CommonUser), 1, fp);
     fclose(fp);
+    delete CU;
 }
 
 //管理员删除学校用户默认账号和密码
 void Administrator::deleteCommonUser() {
-
+    auto cp = new CommonUser();
+    string deleteUsername;
+    cout <<"请输入您想删除的账户的用户名";
+    cin >>deleteUsername;
+    FILE *fp = fopen("CommonUser.bin", "rb");
+    while (true) {
+        if (!fread(cp, sizeof(CommonUser), 1, fp)) {
+            delete cp;
+            break;
+        }
+        if (cp->getUsername() ==deleteUsername) {
+            auto null = new CommonUser();
+            fseek(fp, -int(sizeof(CommonUser)), SEEK_CUR);
+            fwrite(null, sizeof(CommonUser), 1, fp);
+            delete cp;
+            break;
+        }
+    }
+    cout << "删除用户成功！";
 }
 
 //管理员恢复学校用户默认密码
 void Administrator::resetCommonUser() {
-
+    auto cp = new CommonUser();
+    string resetUsername;
+    cout <<"请输入您想恢复的账户的用户名";
+    cin >>resetUsername;
+    FILE *fp = fopen("CommonUser.bin", "rb");
+    while (true) {
+        if (!fread(cp, sizeof(CommonUser), 1, fp)) {
+            delete cp;
+            break;
+        }
+        if (cp->getUsername() ==resetUsername) {
+            cp->resetPassword();
+            fseek(fp, -int(sizeof(CommonUser)), SEEK_CUR);
+            fwrite(cp, sizeof(CommonUser), 1, fp);
+            delete cp;
+            break;
+        }
+    }
+    cout << "删除用户成功！";
 }
+
 
 //管理员修改图书信息
 void Administrator::modifyBook() {

@@ -275,6 +275,7 @@ Library.o: Library.cpp.o
 # target to build an object file
 Library.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Library.dir/build.make CMakeFiles/Library.dir/Library.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/library.dir/build.make CMakeFiles/library.dir/Library.cpp.o
 .PHONY : Library.cpp.o
 
 Library.i: Library.cpp.i
@@ -284,6 +285,7 @@ Library.i: Library.cpp.i
 # target to preprocess a source file
 Library.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Library.dir/build.make CMakeFiles/Library.dir/Library.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/library.dir/build.make CMakeFiles/library.dir/Library.cpp.i
 .PHONY : Library.cpp.i
 
 Library.s: Library.cpp.s
@@ -293,6 +295,7 @@ Library.s: Library.cpp.s
 # target to generate assembly for a file
 Library.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Library.dir/build.make CMakeFiles/Library.dir/Library.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/library.dir/build.make CMakeFiles/library.dir/Library.cpp.s
 .PHONY : Library.cpp.s
 
 User.o: User.cpp.o

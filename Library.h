@@ -21,11 +21,28 @@ public:
     //析构函数
     ~Library() = default;
 
+    //获取管理员人数
+    static int getAdminNum();
+
+    //主菜单
+    void MainMenu();
+
     //注册模块
+    void RegisterMenu();
 
     //登录模块
+    auto LoginMenu(User*);
+
+    static void Login(CommonUser &);
+
+    static void Login(Administrator &);
+
+    //修改模块
+    void ModifyPassword(Administrator &);
+
+    //查询模块
+    void ViewOnline();
 
 };
-
 
 #endif //LIBRARY_LIBRARY_H

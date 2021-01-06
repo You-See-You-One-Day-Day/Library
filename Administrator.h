@@ -76,10 +76,10 @@ public:
     static void addCommonUser();
 
     //管理员删除学校用户默认账号和密码
-    void deleteCommonUser();
+    static void deleteCommonUser();
 
     //管理员恢复学校用户默认密码
-    void resetCommonUser();
+    static void resetCommonUser();
 
     //管理员修改图书信息
     void modifyBook();
