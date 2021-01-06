@@ -3,6 +3,7 @@
 //
 
 #include "CommonUser.h"
+//#include "book.h"
 
 using namespace std;
 
@@ -23,19 +24,19 @@ void CommonUser::modifyPassword() {
         cin >> confirmPassword;
         if (modifyPassword == confirmPassword) {
             m_password = modifyPassword;
-            auto ap = new CommonUser();
-            FILE *fp = fopen("Administrator.bin", "wb+");
+            auto cp = new CommonUser();
+            FILE *fp = fopen("CommonUSer.bin", "wb+");
             while (true) {
-                if (!fread(ap, sizeof(CommonUser), 1, fp)) {
-                    delete ap;
+                if (!fread(cp, sizeof(CommonUser), 1, fp)) {
+                    delete cp;
                     break;
                 }
-                if (ap->getUsername() == m_username) {
-                    *ap = *this;
-                    ap->m_password = modifyPassword;
+                if (cp->getUsername() == m_username) {
+                    *cp = *this;
+                    cp->m_password = modifyPassword;
                     fseek(fp, -int(sizeof(CommonUser)), SEEK_CUR);
-                    fwrite(ap, sizeof(CommonUser), 1, fp);
-                    delete ap;
+                    fwrite(cp, sizeof(CommonUser), 1, fp);
+                    delete cp;
                     break;
                 }
             }
@@ -60,6 +61,27 @@ void CommonUser::modifyPassword() {
         cout << "密码输入错误，请重新输入\n";
         goto start;
     }
-
 };
+
+
+//管理员重制密码接口
+void CommonUser::resetPassword() {
+    m_password = "123456";
+}
+
+
+//普通用户搜索图书
+void searchBook() {
+//    FILE
+}
+
+
+//普通用户借书
+void borrowBook();
+
+//普通用户可以还书
+void returnBook();
+
+//普通用户查看借阅记录
+void viewRecord();
 

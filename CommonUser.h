@@ -64,16 +64,19 @@ public:
     //普通用户修改密码
     void modifyPassword() override;
 
-    //学校用户搜索图书
+    //管理员重置密码接口
+    void resetPassword();
+
+    //普通用户搜索图书
     void searchBook();
 
-    //学校用户借书
+    //普通用户借书
     void borrowBook();
 
-    //学校用户可以还书
+    //普通用户可以还书
     void returnBook();
 
-    //学校用户查看借阅记录
+    //普通用户查看借阅记录
     void viewRecord();
 
 

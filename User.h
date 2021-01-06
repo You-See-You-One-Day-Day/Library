@@ -36,8 +36,6 @@ public:
 protected:
     string m_username;  //账号
     string m_password;  //密码
-    bool m_permission{};  //管理员权限
-
 };
 
 

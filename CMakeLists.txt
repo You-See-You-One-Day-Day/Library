@@ -3,7 +3,7 @@ project(Library)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_library(library Administrator.cpp CommonUser.cpp User.cpp)
+add_library(library Administrator.cpp CommonUser.cpp User.cpp Library.cpp)
 
 add_executable(CommonUser CommonUser.cpp)
 add_executable(User User.cpp)
