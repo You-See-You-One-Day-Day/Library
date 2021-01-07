@@ -7,30 +7,6 @@
 using namespace std;
 
 
- auto Library::LoginMenu(User *pUser) {
-    int a;
-    LoginStart:
-    cout << "请选择您的登录模式：1管理员模式，2普通用户模式\n";
-    cin >> a;
-    switch (a) {
-        case 1: {
-            auto user = new Administrator();
-            Login(*user);
-            pUser = user;
-            return pUser;
-        }
-        case 2: {
-            auto user = new CommonUser();
-            Login(*user);
-            pUser = user;
-            return pUser;
-        }
-        default: {
-            cout << "不存在该类型,请重新选择\n";
-            goto LoginStart;
-        }
-    }
-}
 
 
 //注册模块
@@ -48,19 +24,21 @@ int Library::getAdminNum() {                        //获取管理员人数
     }
     return num;
 }
+
 void Library::RegisterMenu() {
     int a;
-    int AdministratorNumber = this->getAdminNum();
+    int AdministratorNumber = getAdminNum();
     registerStart:
     cout << "请选择注册用户类型：1管理员，2普通用户\n";
     cin >> a;
     switch (a) {
         case 1 : {
-            if (AdministratorNumber <= 4) {
+            if (AdministratorNumber < 4) {
                 auto *AD = new Administrator(a);
                 FILE *fp = fopen("Administrator.bin", "ab+");
                 fwrite(AD, sizeof(Administrator), 1, fp);
                 fclose(fp);
+                delete AD;
                 cout << "现在已有" << AdministratorNumber << "位管理员\n";
             } else {
                 cout << "管理员人数超过" << AdministratorNumber << "位，拒绝继续创建\n";
@@ -73,6 +51,7 @@ void Library::RegisterMenu() {
             FILE *fp = fopen("CommonUser.bin", "ab+");
             fwrite(CU, sizeof(CommonUser), 1, fp);
             fclose(fp);
+            delete CU;
             break;
         }
 
@@ -87,8 +66,27 @@ void Library::RegisterMenu() {
 }
 
 
-
 //登录模块
+bool Library::LoginMenu(Administrator &a, CommonUser &b) {
+    int select;
+    LoginStart:
+    cout << "请选择您的登录模式：1管理员模式，2普通用户模式\n";
+    cin >> select;
+    switch (select) {
+        case 1: {
+            Login(a);
+            return true;
+        }
+        case 2: {
+            Login(b);
+            return false;
+        }
+        default: {
+            goto LoginStart;
+        }
+    }
+}
+
 void Library::Login(Administrator &a) {
     string username, password;
     int times = 0;
@@ -113,9 +111,10 @@ void Library::Login(Administrator &a) {
             delete ap;
             break;
         }
-
     }
     if (log) {
+        a.Online = true;
+        a.RecordOnline();
         cout << "恭喜您登录成功\n";
     } else {
         ++times;
@@ -157,6 +156,7 @@ void Library::Login(CommonUser &a) {
     }
     if (log) {
         a.Online = true;
+        a.RecordOnline();
         cout << "恭喜您登录成功\n";
     } else {
         ++times;
@@ -170,35 +170,152 @@ void Library::Login(CommonUser &a) {
     }
 }
 
-
-
-
-
-//修改密码模块
-void Library::ModifyPassword(Administrator &a){
-    a.modifyPassword();
-}
-
-void Library::MainMenu() {
+//主菜单
+bool Library::MainMenu(Administrator &a, CommonUser &b) {
     int select;
-    cout << "\t\t\t ============ 图书管理系统 ============\n";
-    cout << "\t\t\t|************** 1.注册  **************｜\n";
-    cout << "\t\t\t|************** 2.登录  **************｜\n";
-    cout << "\t\t\t|************** 3.退出  **************｜\n";
-//    cout << "\t\t\t|************** 4.  **************｜\n";
-//    cout << "\t\t\t|************** 5.  **************｜\n";
-    cout <<"\n\n\n\n";
+    start:
+    cout << "\t\t\t ============ 图 书 管 理 系 统 ============\n";
+    cout << "\t\t\t|************** 0.用户文档  **************｜\n";
+    cout << "\t\t\t|************** 1 注册     **************｜\n";
+    cout << "\t\t\t|************** 2.登录     **************｜\n";
+    cout << "\t\t\t|************** 3.退出     **************｜\n\n";
     cout << "请输入您的选择：";
+    select:
     cin >> select;
     switch (select) {
-        case 1:{
-
-
+        case 0: {
+            cout << "用户文档，不存在的，想都不要想" << endl;
+            goto start;
         }
-        case 2:{
-
+        case 1: {
+            RegisterMenu();
+            goto start;
+        }
+        case 2: {
+            return true;
         }
         case 3:
+            return false;
+        default:
+            cout << "没有这个选项，请重新选择：";
+            goto select;
+    }
+}
+
+
+//用户菜单
+void Library::UserMenu(Administrator &administrator) {
+    int select;
+    start:
+    cout << "\t\t\t=============== 管 理 员 菜 单 ===============\n";
+    cout << "\t\t\t|************** 0.修改密码     **************｜\n";
+    cout << "\t\t\t|************** 1.搜索图书     **************｜\n";
+    cout << "\t\t\t|************** 2.增加图书     **************｜\n";
+    cout << "\t\t\t|************** 3.删除图书     **************｜\n";
+    cout << "\t\t\t|************** 4.修改图书信息  **************｜\n";
+    cout << "\t\t\t|************** 5.添加普通用户  **************｜\n";
+    cout << "\t\t\t|************** 6.删除普通用户  **************｜\n";
+    cout << "\t\t\t|************** 7.重置普通用户  **************｜\n";
+    cout << "\t\t\t|************** 8.查询登录记录  **************｜\n";
+    cout << "\t\t\t|************** 9.退出登录     **************｜\n\n";
+    cout << "请输入您的选择：";
+    select:
+    cin >> select;
+    switch (select) {
+        case 0: {
+            administrator.modifyPassword();
+            cout <<"检测到密码已修改，请重新登录\n";
+            break;
+        }
+//        case 1: {
+//            break;
+//        }
+//        case 2: {
+//            break;
+//        }
+//        case 3: {
+//            break;
+//        }
+//        case 4: {
+//            break;
+//        }
+        case 5: {
+            Administrator::addCommonUser();
+            goto start;
+        }
+        case 6: {
+            Administrator::deleteCommonUser();
+            goto start;
+        }
+        case 7: {
+            Administrator::resetCommonUser();
+            goto start;
+        }
+        case 8: {
+            administrator.ViewOnlineRecord();
+            goto start;
+        }
+        case 9: {
+            administrator.Online = false;
+            administrator.RecordOnline();
+            break;
+        }
+        default: {
+            cout << "没有这个选项，请重新选择：";
+            goto select;
+        }
+    }
+}
+
+void Library::UserMenu(CommonUser &commonUser) {
+    int select;
+    start:
+    cout << "\t\t\t ================ 用 户 菜 单 ================\n";
+    cout << "\t\t\t|************** 0.更改密码     **************｜\n";
+    cout << "\t\t\t|************** 1.查询图书     **************｜\n";
+    cout << "\t\t\t|************** 2.借阅图书     **************｜\n";
+    cout << "\t\t\t|************** 3.归还图书     **************｜\n";
+    cout << "\t\t\t|************** 4.查询登录记录  **************｜\n";
+    cout << "\t\t\t|************** 5.查询借阅记录  **************｜\n";
+    cout << "\t\t\t|************** 6.退出登录     **************｜\n\n";
+    cout << "请输入您的选择：";
+    select:
+    cin >> select;
+    switch (select) {
+        case 0: {
+            commonUser.modifyPassword();
+            cout <<"检测到密码已修改，请重新登录\n";
+            break;
+        }
+        case 1: {
+            commonUser.searchBook();
+            goto start;
+        }
+        case 2: {
+            commonUser.borrowBook();
+            goto start;
+        }
+        case 3: {
+            commonUser.returnBook();
+            goto start;
+        }
+        case 4: {
+            commonUser.ViewOnlineRecord();
+            goto start;
+        }
+        case 5: {
+            commonUser.viewRecord();
+            goto start;
+        }
+        case 6: {
+            commonUser.Online = false;
+            commonUser.RecordOnline();
+            break;
+        }
+        default: {
+            cout << "没有这个选项，请重新选择：";
+            goto select;
+        }
     }
 
 

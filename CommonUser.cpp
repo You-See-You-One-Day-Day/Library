@@ -25,7 +25,7 @@ void CommonUser::modifyPassword() {
         if (modifyPassword == confirmPassword) {
             m_password = modifyPassword;
             auto cp = new CommonUser();
-            FILE *fp = fopen("CommonUSer.bin", "wb+");
+            FILE *fp = fopen("CommonUser.bin", "wb+");
             while (true) {
                 if (!fread(cp, sizeof(CommonUser), 1, fp)) {
                     delete cp;
@@ -46,7 +46,9 @@ void CommonUser::modifyPassword() {
             times1--;
             if (times1 <= 0) {
                 cout << "输入错误超过三次，拒绝修改\n";
-                exit(1);
+                Online = false;
+                RecordOnline();
+                throw;
             }
             cout << "前后密码不一致，请重新输入：\n";
 
@@ -61,7 +63,7 @@ void CommonUser::modifyPassword() {
         cout << "密码输入错误，请重新输入\n";
         goto start;
     }
-};
+}
 
 
 //管理员重制密码接口
@@ -71,17 +73,29 @@ void CommonUser::resetPassword() {
 
 
 //普通用户搜索图书
-void searchBook() {
+void CommonUser::searchBook() {
 //    FILE
 }
 
 
 //普通用户借书
-void borrowBook();
+void CommonUser::borrowBook() {
+
+}
 
 //普通用户可以还书
-void returnBook();
+void CommonUser::returnBook() {
+
+}
+
+//普通用户记录借阅记录
+void CommonUser::writeRecord() {
+
+}
 
 //普通用户查看借阅记录
-void viewRecord();
+void CommonUser::viewRecord() {
+
+}
+
 

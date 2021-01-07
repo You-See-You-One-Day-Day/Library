@@ -68,52 +68,65 @@ void Administrator::addCommonUser() {
     fwrite(CU, sizeof(CommonUser), 1, fp);
     fclose(fp);
     delete CU;
+    cout << "添加用户成功！\n";
 }
 
 //管理员删除学校用户默认账号和密码
 void Administrator::deleteCommonUser() {
     auto cp = new CommonUser();
     string deleteUsername;
-    cout <<"请输入您想删除的账户的用户名";
-    cin >>deleteUsername;
+    bool success = false;
+    cout << "请输入您想删除的账户的用户名\n";
+    cin >> deleteUsername;
     FILE *fp = fopen("CommonUser.bin", "rb");
     while (true) {
         if (!fread(cp, sizeof(CommonUser), 1, fp)) {
             delete cp;
             break;
         }
-        if (cp->getUsername() ==deleteUsername) {
+        if (cp->getUsername() == deleteUsername) {
             auto null = new CommonUser();
-            fseek(fp, -int(sizeof(CommonUser)), SEEK_CUR);
+            fseek(fp, 0, SEEK_CUR);
             fwrite(null, sizeof(CommonUser), 1, fp);
             delete cp;
+            success = true;
             break;
         }
     }
-    cout << "删除用户成功！";
+    if (success) {
+        cout << "删除用户成功！\n";
+    } else {
+        cout << "删除用户失败！\n";
+    }
 }
 
 //管理员恢复学校用户默认密码
 void Administrator::resetCommonUser() {
     auto cp = new CommonUser();
     string resetUsername;
-    cout <<"请输入您想恢复的账户的用户名";
-    cin >>resetUsername;
-    FILE *fp = fopen("CommonUser.bin", "rb");
+    bool success = false;
+    cout << "请输入您想重置的账户的用户名\n";
+    cin >> resetUsername;
+    FILE *fp = fopen("CommonUser.bin", "wb");
     while (true) {
         if (!fread(cp, sizeof(CommonUser), 1, fp)) {
             delete cp;
             break;
         }
-        if (cp->getUsername() ==resetUsername) {
+        if (cp->getUsername() == resetUsername) {
             cp->resetPassword();
             fseek(fp, -int(sizeof(CommonUser)), SEEK_CUR);
             fwrite(cp, sizeof(CommonUser), 1, fp);
             delete cp;
+            success = true;
             break;
         }
     }
-    cout << "删除用户成功！";
+    if (success) {
+        cout << "重置用户成功！\n";
+    } else {
+        cout << "重置用户失败！\n";
+    }
 }
 
 
