@@ -68,6 +68,7 @@ void Administrator::addCommonUser() {
     fwrite(CU, sizeof(CommonUser), 1, fp);
     fclose(fp);
     delete CU;
+    cout << "添加用户成功！";
 }
 
 //管理员删除学校用户默认账号和密码

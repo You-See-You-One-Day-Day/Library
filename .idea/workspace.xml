@@ -16,7 +16,25 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b9f0e92a-ac51-4ed2-8f47-170d2f268784" name="默认的" comment="用户模式完善" />
+    <list default="true" id="b9f0e92a-ac51-4ed2-8f47-170d2f268784" name="默认的" comment="用户模式完善">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Administrator.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Administrator.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CommonUser.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CommonUser.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CommonUser.h" beforeDir="false" afterPath="$PROJECT_DIR$/CommonUser.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Library.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library.h" beforeDir="false" afterPath="$PROJECT_DIR$/Library.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/User.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User.h" beforeDir="false" afterPath="$PROJECT_DIR$/User.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Administrator.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Administrator.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Library.dir/Administrator.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Library.dir/Administrator.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Library.dir/CommonUser.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Library.dir/CommonUser.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Library.dir/User.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Library.dir/User.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/main.dir/main.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/liblibrary.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/liblibrary.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/main" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/main" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -110,11 +128,6 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="CMake 应用程序.Administrator" />
       <item itemvalue="CMake 应用程序.CommonUser" />
@@ -145,6 +158,8 @@
       <workItem from="1609687627484" duration="4209000" />
       <workItem from="1609733685300" duration="11669000" />
       <workItem from="1609760627574" duration="1707000" />
+      <workItem from="1609939591009" duration="698000" />
+      <workItem from="1609994502464" duration="11044000" />
     </task>
     <task id="LOCAL-00001" summary="完善用户模式大致架构">
       <created>1609250089486</created>
@@ -230,7 +245,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609916506149</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="用户模式完善">
+      <created>1609934513846</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1609934513846</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -307,7 +329,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/User.cpp</url>
-          <line>7</line>
+          <line>8</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>

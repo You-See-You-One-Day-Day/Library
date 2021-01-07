@@ -25,23 +25,21 @@ public:
     static int getAdminNum();
 
     //主菜单
-    void MainMenu();
+    static bool MainMenu(Administrator &, CommonUser &);
+
+    //用户菜单
+    static void UserMenu(Administrator&);
+    static void UserMenu(CommonUser&);
 
     //注册模块
-    void RegisterMenu();
+    static void RegisterMenu();
 
     //登录模块
-    auto LoginMenu(User*);
+    static bool LoginMenu(Administrator &, CommonUser &);
 
     static void Login(CommonUser &);
 
     static void Login(Administrator &);
-
-    //修改模块
-    void ModifyPassword(Administrator &);
-
-    //查询模块
-    void ViewOnline();
 
 };
 

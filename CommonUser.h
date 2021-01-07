@@ -76,6 +76,7 @@ public:
     //普通用户可以还书
     void returnBook();
 
+    void writeRecord();
     //普通用户查看借阅记录
     void viewRecord();
 

@@ -8,6 +8,8 @@
 #define LIBRARY_USER_H
 
 #include<iostream>
+#include <ctime>
+#include <fstream>
 
 using namespace std;
 
@@ -31,6 +33,13 @@ public:
 
     //修改密码
     virtual void modifyPassword() = 0;
+
+    //记录登录记录
+    void RecordOnline();
+
+    //查询登录记录
+    void  ViewOnlineRecord();
+
 
     bool Online{};  //在线状态
 protected:

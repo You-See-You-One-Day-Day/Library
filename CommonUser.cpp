@@ -61,7 +61,7 @@ void CommonUser::modifyPassword() {
         cout << "密码输入错误，请重新输入\n";
         goto start;
     }
-};
+}
 
 
 //管理员重制密码接口
@@ -71,17 +71,29 @@ void CommonUser::resetPassword() {
 
 
 //普通用户搜索图书
-void searchBook() {
+void CommonUser::searchBook() {
 //    FILE
 }
 
 
 //普通用户借书
-void borrowBook();
+void CommonUser::borrowBook() {
+
+}
 
 //普通用户可以还书
-void returnBook();
+void CommonUser::returnBook() {
+
+}
+
+//普通用户记录借阅记录
+void CommonUser::writeRecord() {
+
+}
 
 //普通用户查看借阅记录
-void viewRecord();
+void CommonUser::viewRecord() {
+
+}
+
 
