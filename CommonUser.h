@@ -33,10 +33,10 @@ public:
         if (judge != 'Y') {
             string initialPassword, confirmPassword;
             input:
-            cout << "请输入密码：";
+            cout << "请输入密码：\n";
             cin >> initialPassword;
 
-            cout << "请确认密码：";
+            cout << "请确认密码：\n";
             cin >> confirmPassword;
 
             if (initialPassword != confirmPassword) {
@@ -75,8 +75,10 @@ public:
 
     //普通用户可以还书
     void returnBook();
-
+//
+    //普通用户写入借阅记录
     void writeRecord();
+
     //普通用户查看借阅记录
     void viewRecord();
 

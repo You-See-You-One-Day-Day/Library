@@ -33,7 +33,7 @@ void Library::RegisterMenu() {
     cin >> a;
     switch (a) {
         case 1 : {
-            if (AdministratorNumber <= 4) {
+            if (AdministratorNumber < 4) {
                 auto *AD = new Administrator(a);
                 FILE *fp = fopen("Administrator.bin", "ab+");
                 fwrite(AD, sizeof(Administrator), 1, fp);
@@ -82,7 +82,6 @@ bool Library::LoginMenu(Administrator &a, CommonUser &b) {
             return false;
         }
         default: {
-            cout << "不存在该类型,请重新选择\n";
             goto LoginStart;
         }
     }
@@ -157,6 +156,7 @@ void Library::Login(CommonUser &a) {
     }
     if (log) {
         a.Online = true;
+        a.RecordOnline();
         cout << "恭喜您登录成功\n";
     } else {
         ++times;
@@ -174,12 +174,11 @@ void Library::Login(CommonUser &a) {
 bool Library::MainMenu(Administrator &a, CommonUser &b) {
     int select;
     start:
-    cout << "\t\t\t ============ 图书管理系统 ============\n";
+    cout << "\t\t\t ============ 图 书 管 理 系 统 ============\n";
     cout << "\t\t\t|************** 0.用户文档  **************｜\n";
-    cout << "\t\t\t|************** 1.注册     **************｜\n";
+    cout << "\t\t\t|************** 1 注册     **************｜\n";
     cout << "\t\t\t|************** 2.登录     **************｜\n";
-    cout << "\t\t\t|************** 3.退出     **************｜\n";
-    cout << "\n\n\n\n";
+    cout << "\t\t\t|************** 3.退出     **************｜\n\n";
     cout << "请输入您的选择：";
     select:
     cin >> select;
@@ -208,7 +207,7 @@ bool Library::MainMenu(Administrator &a, CommonUser &b) {
 void Library::UserMenu(Administrator &administrator) {
     int select;
     start:
-    cout << "\t\t\t ============= 管 理 员 菜 单 =============\n";
+    cout << "\t\t\t=============== 管 理 员 菜 单 ===============\n";
     cout << "\t\t\t|************** 0.修改密码     **************｜\n";
     cout << "\t\t\t|************** 1.搜索图书     **************｜\n";
     cout << "\t\t\t|************** 2.增加图书     **************｜\n";
@@ -218,16 +217,15 @@ void Library::UserMenu(Administrator &administrator) {
     cout << "\t\t\t|************** 6.删除普通用户  **************｜\n";
     cout << "\t\t\t|************** 7.重置普通用户  **************｜\n";
     cout << "\t\t\t|************** 8.查询登录记录  **************｜\n";
-    cout << "\t\t\t|************** 9.退出登录     **************｜\n";
-
-    cout << "\n\n\n\n";
+    cout << "\t\t\t|************** 9.退出登录     **************｜\n\n";
     cout << "请输入您的选择：";
     select:
     cin >> select;
     switch (select) {
         case 0: {
             administrator.modifyPassword();
-            goto start;
+            cout <<"检测到密码已修改，请重新登录\n";
+            break;
         }
 //        case 1: {
 //            break;
@@ -253,39 +251,41 @@ void Library::UserMenu(Administrator &administrator) {
             Administrator::resetCommonUser();
             goto start;
         }
-        case 8:{
-
+        case 8: {
+            administrator.ViewOnlineRecord();
+            goto start;
         }
         case 9: {
             administrator.Online = false;
             administrator.RecordOnline();
             break;
         }
-        default:
+        default: {
             cout << "没有这个选项，请重新选择：";
             goto select;
+        }
     }
-
 }
 
 void Library::UserMenu(CommonUser &commonUser) {
     int select;
     start:
-    cout << "\t\t\t ============= 用 户 菜 单 =============\n";
+    cout << "\t\t\t ================ 用 户 菜 单 ================\n";
     cout << "\t\t\t|************** 0.更改密码     **************｜\n";
     cout << "\t\t\t|************** 1.查询图书     **************｜\n";
     cout << "\t\t\t|************** 2.借阅图书     **************｜\n";
     cout << "\t\t\t|************** 3.归还图书     **************｜\n";
     cout << "\t\t\t|************** 4.查询登录记录  **************｜\n";
     cout << "\t\t\t|************** 5.查询借阅记录  **************｜\n";
-    cout << "\t\t\t|************** 6.退出登录     **************｜\n";
+    cout << "\t\t\t|************** 6.退出登录     **************｜\n\n";
     cout << "请输入您的选择：";
     select:
     cin >> select;
     switch (select) {
         case 0: {
             commonUser.modifyPassword();
-            goto start;
+            cout <<"检测到密码已修改，请重新登录\n";
+            break;
         }
         case 1: {
             commonUser.searchBook();
@@ -300,6 +300,7 @@ void Library::UserMenu(CommonUser &commonUser) {
             goto start;
         }
         case 4: {
+            commonUser.ViewOnlineRecord();
             goto start;
         }
         case 5: {
@@ -311,9 +312,10 @@ void Library::UserMenu(CommonUser &commonUser) {
             commonUser.RecordOnline();
             break;
         }
-        default:
+        default: {
             cout << "没有这个选项，请重新选择：";
-            goto select2;
+            goto select;
+        }
     }
 
 

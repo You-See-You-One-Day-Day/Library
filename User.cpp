@@ -26,19 +26,41 @@ void User::RecordOnline() {
         struct tm *p;
         time(&tp);
         p = localtime(&tp);
-        ofstream ofs;
-        ofs.open("UserOnlineRecord.txt", ios::app);
-        ofs << "用户名：" << m_username << "\t登录时间：" << 1900 + p->tm_year << "/" << 1 + p->tm_mon
-            << "/" << p->tm_mday << ' ' << p->tm_hour << ':' << p->tm_min << ':' << p->tm_sec << endl;
-    } else{
+        FILE *fp = fopen("UserOnlineRecord.txt", "a+");
+        fprintf(fp, "用户名： %s\t\t\t登录时间： %d/%d/%d\t%d:%02d:%02d\n", m_username.c_str(),
+                1900 + p->tm_year, 1 + p->tm_mon, p->tm_mday, p->tm_hour, p->tm_min, p->tm_sec);
+        fclose(fp);
+    } else {
         time_t tp;
         struct tm *p;
         time(&tp);
         p = localtime(&tp);
-        ofstream ofs;
-        ofs.open("UserOnlineRecord.txt", ios::app);
-        ofs << "用户名：" << m_username << "\t退出时间：" << 1900 + p->tm_year << "/" << 1 + p->tm_mon
-            << "/" << p->tm_mday << ' ' << p->tm_hour << ':' << p->tm_min << ':' << p->tm_sec << endl;
+        FILE *fp = fopen("UserOnlineRecord.txt", "a+");
+        fprintf(fp, "用户名： %s\t\t\t退出时间： %d/%d/%d\t%d:%02d:%02d\n", m_username.c_str(),
+                1900 + p->tm_year, 1 + p->tm_mon, p->tm_mday, p->tm_hour, p->tm_min, p->tm_sec);
+        fclose(fp);
     }
 }
 
+void User::ViewOnlineRecord() {
+    ifstream ifs;
+    string str;
+    ifs.open("UserOnlineRecord.txt", ios::in);
+    while (!ifs.eof()) {
+        bool locate = false;
+        getline(ifs, str);
+        istringstream is(str);
+        do {
+            string word;
+            is >> word;
+            if (word == m_username) {
+                locate = true;
+                break;
+            }
+        } while (is);
+        if (locate) {
+            cout << str << endl;
+        }
+    }
+    ifs.close();
+}

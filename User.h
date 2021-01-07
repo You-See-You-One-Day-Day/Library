@@ -10,6 +10,7 @@
 #include<iostream>
 #include <ctime>
 #include <fstream>
+#include <sstream>
 
 using namespace std;
 

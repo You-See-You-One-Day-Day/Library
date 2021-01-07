@@ -298,6 +298,9 @@
 			<Option target="Administrator"/>
 			<Option target="library"/>
 		</Unit>
+		<Unit filename="/Users/wuqiquan/CLionProjects/Library/Booklist.h">
+			<Option target="library"/>
+		</Unit>
 		<Unit filename="/Users/wuqiquan/CLionProjects/Library/CommonUser.cpp">
 			<Option target="CommonUser"/>
 			<Option target="library"/>

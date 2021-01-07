@@ -25,7 +25,7 @@ void CommonUser::modifyPassword() {
         if (modifyPassword == confirmPassword) {
             m_password = modifyPassword;
             auto cp = new CommonUser();
-            FILE *fp = fopen("CommonUSer.bin", "wb+");
+            FILE *fp = fopen("CommonUser.bin", "wb+");
             while (true) {
                 if (!fread(cp, sizeof(CommonUser), 1, fp)) {
                     delete cp;
@@ -46,7 +46,9 @@ void CommonUser::modifyPassword() {
             times1--;
             if (times1 <= 0) {
                 cout << "输入错误超过三次，拒绝修改\n";
-                exit(1);
+                Online = false;
+                RecordOnline();
+                throw;
             }
             cout << "前后密码不一致，请重新输入：\n";
 
