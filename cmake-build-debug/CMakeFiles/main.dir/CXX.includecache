@@ -11,6 +11,8 @@ cstdio
 -
 string
 -
+vector
+-
 User.h
 /Users/wuqiquan/CLionProjects/Library/User.h
 
@@ -34,6 +36,8 @@ ctime
 fstream
 -
 sstream
+-
+vector
 -
 
 /Users/wuqiquan/CLionProjects/Library/main.cpp

@@ -67,19 +67,25 @@ void Library::RegisterMenu() {
 
 
 //登录模块
-bool Library::LoginMenu(Administrator &a, CommonUser &b) {
+string Library::LoginMenu(Administrator &a, CommonUser &b) {
     int select;
     LoginStart:
     cout << "请选择您的登录模式：1管理员模式，2普通用户模式\n";
     cin >> select;
     switch (select) {
         case 1: {
-            Login(a);
-            return true;
+            if (Login(a)) {
+                return "Administrator";
+            } else {
+                return "failed";
+            }
         }
         case 2: {
-            Login(b);
-            return false;
+            if (Login(b)) {
+                return "CommonUser";
+            } else {
+                return "failed";
+            }
         }
         default: {
             goto LoginStart;
@@ -87,7 +93,7 @@ bool Library::LoginMenu(Administrator &a, CommonUser &b) {
     }
 }
 
-void Library::Login(Administrator &a) {
+bool Library::Login(Administrator &a) {
     string username, password;
     int times = 0;
     cout << "您正以管理员身份登录\n";
@@ -116,19 +122,24 @@ void Library::Login(Administrator &a) {
         a.Online = true;
         a.RecordOnline();
         cout << "恭喜您登录成功\n";
+        return true;
     } else {
         ++times;
         if (times >= 3) {
             cout << "输入错误达到三次，拒绝访问\n";
-            exit(1);
         } else {
-            cout << "用户名或密码输入错误，请重新输入\n";
-            goto loginStart;
+            char select;
+            cout << "用户名或密码输入错误，是否继续登录？ （Y/N）";
+            cin >> select;
+            if (select == 'Y') {
+                goto loginStart;
+            }
         }
     }
+    return false;
 }
 
-void Library::Login(CommonUser &a) {
+bool Library::Login(CommonUser &a) {
     string username, password;
     int times = 0;
     cout << "您正以普通用户身份登录\n";
@@ -158,16 +169,21 @@ void Library::Login(CommonUser &a) {
         a.Online = true;
         a.RecordOnline();
         cout << "恭喜您登录成功\n";
+        return true;
     } else {
         ++times;
         if (times >= 3) {
             cout << "输入错误达到三次，拒绝访问\n";
-            exit(1);
         } else {
-            cout << "用户名或密码输入错误，请重新输入\n";
-            goto loginStart;
+            char select;
+            cout << "用户名或密码输入错误，是否继续登录？ （Y/N）";
+            cin >> select;
+            if (select == 'Y') {
+                goto loginStart;
+            }
         }
     }
+    return false;
 }
 
 //主菜单
@@ -176,7 +192,7 @@ bool Library::MainMenu(Administrator &a, CommonUser &b) {
     start:
     cout << "\t\t\t ============ 图 书 管 理 系 统 ============\n";
     cout << "\t\t\t|************** 0.用户文档  **************｜\n";
-    cout << "\t\t\t|************** 1 注册     **************｜\n";
+    cout << "\t\t\t|************** 1.注册     **************｜\n";
     cout << "\t\t\t|************** 2.登录     **************｜\n";
     cout << "\t\t\t|************** 3.退出     **************｜\n\n";
     cout << "请输入您的选择：";
@@ -224,21 +240,27 @@ void Library::UserMenu(Administrator &administrator) {
     switch (select) {
         case 0: {
             administrator.modifyPassword();
-            cout <<"检测到密码已修改，请重新登录\n";
-            break;
+            cout << "检测到密码已修改，请重新登录\n";
+            goto start;
         }
-//        case 1: {
-//            break;
-//        }
-//        case 2: {
-//            break;
-//        }
-//        case 3: {
-//            break;
-//        }
-//        case 4: {
-//            break;
-//        }
+        case 1: {
+            Administrator::searchBook();
+            goto start;
+
+        }
+        case 2: {
+            Administrator::addBook();
+            goto start;
+
+        }
+        case 3: {
+            Administrator::deleteBook();
+            goto start;
+        }
+        case 4: {
+            Administrator::modifyBook();
+            goto start;
+        }
         case 5: {
             Administrator::addCommonUser();
             goto start;
@@ -284,7 +306,7 @@ void Library::UserMenu(CommonUser &commonUser) {
     switch (select) {
         case 0: {
             commonUser.modifyPassword();
-            cout <<"检测到密码已修改，请重新登录\n";
+            cout << "检测到密码已修改，请重新登录\n";
             break;
         }
         case 1: {
@@ -317,8 +339,6 @@ void Library::UserMenu(CommonUser &commonUser) {
             goto select;
         }
     }
-
-
 }
 
 

@@ -144,6 +144,19 @@ main/fast:
 .PHONY : main/fast
 
 #=============================================================================
+# Target rules for targets named Book
+
+# Build rule for target.
+Book: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Book
+.PHONY : Book
+
+# fast build rule for target.
+Book/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Book.dir/build.make CMakeFiles/Book.dir/build
+.PHONY : Book/fast
+
+#=============================================================================
 # Target rules for targets named CommonUser
 
 # Build rule for target.
@@ -237,6 +250,36 @@ Administrator.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Administrator.dir/build.make CMakeFiles/Administrator.dir/Administrator.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/library.dir/build.make CMakeFiles/library.dir/Administrator.cpp.s
 .PHONY : Administrator.cpp.s
+
+Book.o: Book.cpp.o
+
+.PHONY : Book.o
+
+# target to build an object file
+Book.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Book.dir/build.make CMakeFiles/Book.dir/Book.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/library.dir/build.make CMakeFiles/library.dir/Book.cpp.o
+.PHONY : Book.cpp.o
+
+Book.i: Book.cpp.i
+
+.PHONY : Book.i
+
+# target to preprocess a source file
+Book.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Book.dir/build.make CMakeFiles/Book.dir/Book.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/library.dir/build.make CMakeFiles/library.dir/Book.cpp.i
+.PHONY : Book.cpp.i
+
+Book.s: Book.cpp.s
+
+.PHONY : Book.s
+
+# target to generate assembly for a file
+Book.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Book.dir/build.make CMakeFiles/Book.dir/Book.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/library.dir/build.make CMakeFiles/library.dir/Book.cpp.s
+.PHONY : Book.cpp.s
 
 CommonUser.o: CommonUser.cpp.o
 
@@ -364,6 +407,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Administrator"
+	@echo "... Book"
 	@echo "... CommonUser"
 	@echo "... Library"
 	@echo "... User"
@@ -372,6 +416,9 @@ help:
 	@echo "... Administrator.o"
 	@echo "... Administrator.i"
 	@echo "... Administrator.s"
+	@echo "... Book.o"
+	@echo "... Book.i"
+	@echo "... Book.s"
 	@echo "... CommonUser.o"
 	@echo "... CommonUser.i"
 	@echo "... CommonUser.s"

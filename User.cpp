@@ -42,6 +42,7 @@ void User::RecordOnline() {
     }
 }
 
+//查看登录记录
 void User::ViewOnlineRecord() {
     ifstream ifs;
     string str;
@@ -64,3 +65,4 @@ void User::ViewOnlineRecord() {
     }
     ifs.close();
 }
+

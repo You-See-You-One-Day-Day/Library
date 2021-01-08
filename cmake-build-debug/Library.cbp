@@ -79,6 +79,48 @@
 					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/wuqiquan/CLionProjects/Library/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="Book">
+				<Option output="/Users/wuqiquan/CLionProjects/Library/cmake-build-debug/Book" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/wuqiquan/CLionProjects/Library/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/wuqiquan/CLionProjects/Library/cmake-build-debug/Makefile&quot;  VERBOSE=1 Book"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/wuqiquan/CLionProjects/Library/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/wuqiquan/CLionProjects/Library/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/wuqiquan/CLionProjects/Library/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Book/fast">
+				<Option output="/Users/wuqiquan/CLionProjects/Library/cmake-build-debug/Book" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/wuqiquan/CLionProjects/Library/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/wuqiquan/CLionProjects/Library/cmake-build-debug/Makefile&quot;  VERBOSE=1 Book/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/wuqiquan/CLionProjects/Library/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/wuqiquan/CLionProjects/Library/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/wuqiquan/CLionProjects/Library/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 			<Target title="CommonUser">
 				<Option output="/Users/wuqiquan/CLionProjects/Library/cmake-build-debug/CommonUser" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/Users/wuqiquan/CLionProjects/Library/cmake-build-debug"/>
@@ -298,7 +340,12 @@
 			<Option target="Administrator"/>
 			<Option target="library"/>
 		</Unit>
-		<Unit filename="/Users/wuqiquan/CLionProjects/Library/Booklist.h">
+		<Unit filename="/Users/wuqiquan/CLionProjects/Library/Book.cpp">
+			<Option target="Book"/>
+			<Option target="library"/>
+		</Unit>
+		<Unit filename="/Users/wuqiquan/CLionProjects/Library/Book.h">
+			<Option target="Book"/>
 			<Option target="library"/>
 		</Unit>
 		<Unit filename="/Users/wuqiquan/CLionProjects/Library/CommonUser.cpp">

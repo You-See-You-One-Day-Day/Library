@@ -35,11 +35,11 @@ public:
     static void RegisterMenu();
 
     //登录模块
-    static bool LoginMenu(Administrator &, CommonUser &);
+    static string LoginMenu(Administrator &, CommonUser &);
 
-    static void Login(CommonUser &);
+    static bool Login(CommonUser &);
 
-    static void Login(Administrator &);
+    static bool Login(Administrator &);
 
 };
 

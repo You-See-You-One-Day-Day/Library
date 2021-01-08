@@ -53,6 +53,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/main.dir/DependInfo.cmake"
+  "CMakeFiles/Book.dir/DependInfo.cmake"
   "CMakeFiles/CommonUser.dir/DependInfo.cmake"
   "CMakeFiles/Administrator.dir/DependInfo.cmake"
   "CMakeFiles/User.dir/DependInfo.cmake"

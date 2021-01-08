@@ -3,9 +3,66 @@
 //
 
 #include "CommonUser.h"
-//#include "book.h"
+#include "Book.h"
 
 using namespace std;
+
+CommonUser::CommonUser(int) {
+    char judge;
+    cout << "您正在创建普通用户\n";
+
+    cout << "请输入用户名： \n";
+    start:
+    cin >> m_username;
+
+    FILE *fp = fopen("CommonUser.bin", "rb");
+    if (fp != nullptr) {
+        auto ap = new CommonUser;
+        bool exist = false;
+        while (true) {
+            if (!fread(ap, sizeof(CommonUser), 1, fp)) {
+                delete ap;
+                break;
+            }
+            if (ap->getUsername() == m_username) {
+                exist = true;
+                delete ap;
+                break;
+            }
+        }
+        if (exist) {
+            cout << "用户名已存在，请重新输入：\n";
+            goto start;
+        }
+    }
+    fclose(fp);
+    cout << "是否使用默认密码123456？（Y/N）  ";
+    cin >> judge;
+    if (judge != 'Y') {
+        string initialPassword, confirmPassword;
+        input:
+        cout << "请输入密码：\n";
+        cin >> initialPassword;
+
+        cout << "请确认密码：\n";
+        cin >> confirmPassword;
+
+        if (initialPassword != confirmPassword) {
+            cout << "前后密码输入不一致，请重新输入\n";
+            goto input;
+        } else {
+            m_password = initialPassword;
+        }
+
+    } else {
+        cout << "您选择使用默认密码\n";
+        m_password = "123456";
+    }
+    cout << "您已成功创建普通用户\n";
+    cout << "您的用户名为： " << m_username << endl;
+    cout << "您的密码为： " << m_password << endl;
+
+}
 
 
 //用户修改密码
@@ -24,8 +81,10 @@ void CommonUser::modifyPassword() {
         cin >> confirmPassword;
         if (modifyPassword == confirmPassword) {
             m_password = modifyPassword;
+            vector<CommonUser> CuList;
+            CuList.clear();
             auto cp = new CommonUser();
-            FILE *fp = fopen("CommonUser.bin", "wb+");
+            FILE *fp = fopen("CommonUser.bin", "ab+");
             while (true) {
                 if (!fread(cp, sizeof(CommonUser), 1, fp)) {
                     delete cp;
@@ -34,12 +93,10 @@ void CommonUser::modifyPassword() {
                 if (cp->getUsername() == m_username) {
                     *cp = *this;
                     cp->m_password = modifyPassword;
-                    fseek(fp, -int(sizeof(CommonUser)), SEEK_CUR);
-                    fwrite(cp, sizeof(CommonUser), 1, fp);
-                    delete cp;
-                    break;
                 }
+                CuList.push_back(*cp);
             }
+            fwrite(&CuList[0], CuList.size() * sizeof(CommonUser), 1, fp);
             fclose(fp);
             cout << "修改密码成功！\n";
         } else {

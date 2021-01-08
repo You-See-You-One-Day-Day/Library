@@ -7,10 +7,11 @@
 #ifndef LIBRARY_USER_H
 #define LIBRARY_USER_H
 
-#include<iostream>
+#include <iostream>
 #include <ctime>
 #include <fstream>
 #include <sstream>
+#include <vector>
 
 using namespace std;
 
