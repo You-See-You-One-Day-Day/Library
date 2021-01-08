@@ -3,76 +3,95 @@
 //
 
 #include "Book.h"
-#include<iostream>
-#include<string>
+
 
 using namespace std;
 
 Book::Book(int num) {
-    cout << "您正在创建第"<<num<<"图书\n";
+    cout << "您正在创建第" << num << "图书\n";
+    InputBook();
+}
+
+
+string Book::GetTitle() const {
+    return m_title;
+}
+
+
+string Book::GetIsbn() const {
+    return m_isbn;
+}
+
+
+string Book::GetAuthor() const {
+    return m_author;
+}
+
+string Book::GetClass1() const {
+    return m_class1;
+}
+
+string Book::GetClass2() const {
+    return m_class2;
+}
+
+int Book::GetNumber() const {
+    return m_number;
+}
+
+void Book::InputBook() {
     cout << "请输入书名：\n";
     cin >> m_title;
     cout << "请输入ISBN编号：\n";
     cin >> m_isbn;
     cout << "请输入作者：\n";
     cin >> m_author;
-    cout << "请分别三级输入图书分类（依照《中图法》）：\n";
-    cin >> m_class1 >> m_class2 >> m_class3;
+    cout << "请输入分类号：\n";
+    m_class = to_string(scanf("%s/%s", m_class1, m_class2));
+    cout << "请输入书的数量：\n";
+    cin >> m_number;
 }
 
-
-string Book::GetTitle() {
-    return m_title;
+void Book::DisplayBook() const {
+    cout << setw(40) << left << "《" << GetTitle() << "》" << setw(20) << left
+         << "ISBN：" << GetIsbn() << setw(30) << left << "作者：" << GetAuthor()
+         << setw(20) << left << "数量：" << GetNumber() << endl;
 }
 
+//void Book::BookInit() {
+//    auto book = new Book;
+//    vector<Book> BookList;
+//    BookList.clear();
+//    FILE *fp = fopen("books.txt", "r+");
+//    while (true) {
+//        if (!fread(book, sizeof(Book), 1, fp)) {
+//            delete book;
+//            break;
+//        }
+//        BookList.push_back(*book);
+//    }
+//    sort(BookList.begin(), BookList.end());
+//}
 
-string Book::GetIsbn() {
-    return m_isbn;
+
+string Book::IntoString()const {
+    string s;
+    s = m_title + ' ' + m_isbn + ' ' + m_author + ' ' + m_class;
+    return s;
 }
 
-
-string Book::GetAuthor() {
-    return m_author;
-}
-
-string Book::GetClass1(){
-    return m_class1;
-}
-
-string Book::GetClass2(){
-    return m_class2;
-}
-
-string Book::GetClass3(){
-    return m_class3;
-}
-
-// 函数GetBook
-/*
-// 成员函数GetBook能够实现从文件中读取数据来构建对象。
-void Book::GetBook(int count) {
-    char title[num1];
-    char isbn[num1];
-    char author[num2];
-
-    ifstream File;
-    File.open("Book 2.txt", ios::binary);
-    try {
-        File.seekg(count * (num1 + num1 + num2), ios::beg);
-        File.read(title, num1);
-        if (File.tellg() > 0)
-            strncpy(m_title, title, num1);
-        File.read(isbn, num1);
-        if (File.tellg() > 0)
-            strncpy(m_isbn, isbn, num1);
-        File.read(author, num2);
-        if (File.tellg() > 0)
-            strncpy(m_author, author, num2);
+bool Book::BeBorrowed() {
+    if (m_number <= 0) {
+        cout << "对不起，该书已无库存\n";
+        return false;
+    } else {
+        m_number--;
+        cout << "借阅成功！\n";
+        return true;
     }
-    catch (...) {
-        throw "file error occurred";
-        File.close();
-    }
-    File.close();
 }
-*/
+
+bool Book::BeReturned() {
+    m_number++;
+    return true;
+}

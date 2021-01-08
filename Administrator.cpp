@@ -10,12 +10,10 @@
 Administrator::Administrator(int) {
     char judge;
     cout << "您正在创建管理员用户\n";
-
     cout << "请输入用户名： \n";
     start:
     cin >> m_username;
-
-    FILE *fp = fopen("Administrator.bin", "rb");
+    FILE *fp = fopen("Administrator.bin", "rb+");
     if (fp != nullptr) {
         auto ap = new Administrator;
         bool exist = false;
@@ -96,6 +94,9 @@ void Administrator::modifyPassword() {
                 }
                 AdList.push_back(*ap);
             }
+            fclose(fp);
+            remove("Administrator.bin");
+            fp = fopen("Administrator.bin", "ab+");
             fwrite(&AdList[0], AdList.size() * sizeof(Administrator), 1, fp);
             fclose(fp);
             cout << "修改密码成功！\n";
@@ -150,6 +151,9 @@ void Administrator::deleteCommonUser() {
             CuList.push_back(*cp);
         }
     }
+    fclose(fp);
+    remove("CommonUser.bin");
+    fp = fopen("CommonUser.bin", "ab+");
     fwrite(&CuList[0], CuList.size() * sizeof(CommonUser), 1, fp);
     fclose(fp);
     if (success) {
@@ -168,7 +172,7 @@ void Administrator::resetCommonUser() {
     cin >> resetUsername;
     vector<CommonUser> CuList;
     CuList.clear();
-    FILE *fp = fopen("CommonUser.bin", "wb+");
+    FILE *fp = fopen("CommonUser.bin", "rb+");
     while (true) {
         if (!fread(cp, sizeof(CommonUser), 1, fp)) {
             delete cp;
@@ -180,6 +184,9 @@ void Administrator::resetCommonUser() {
         }
         CuList.push_back(*cp);
     }
+    fclose(fp);
+    remove("CommonUser.bin");
+    fp = fopen("CommonUser.bin", "ab+");
     fwrite(&CuList[0], CuList.size() * sizeof(CommonUser), 1, fp);
     fclose(fp);
     if (success) {
@@ -189,48 +196,43 @@ void Administrator::resetCommonUser() {
     }
 }
 
-
 //管理员修改图书信息
- void Administrator::modifyBook() {
+void Administrator::modifyBook() {
+    bool success = false;
+    auto book = new Book();
+    cout << "请输入您想要修改的图书的名字、作者或者ISBN编号：\n";
     string message;
-    cout <<"请输入您想要修改的图书的名字或者ISBN编号";
-    string title, author, isbn, class1, class2, class3, book;
-    ifstream ifs;
-    vector<string> BookList;
+    cin >> message;
+    vector<Book> BookList;
     BookList.clear();
-    ifs.open("books.txt", ios::in);
-    while (!ifs.eof()) {
-        bool locate = false;
-        getline(ifs, book);
-        istringstream is(book);
-        do {
-            string word;
-            is >> word;
-            if (word == message) {
-                locate = true;
-                break;
-            }
-        } while (is);
-        if (!locate) {
-            cout << book << endl;
-            cout << "请输入修改后内容\n";
-            cout << "请输入书名：\n";
-            cin >> title;
-            cout << "请输入ISBN编号：\n";
-            cin >> isbn;
-            cout << "请输入作者：\n";
-            cin >> author;
-            cout << "请分别三级输入图书分类（依照《中图法》）：\n";
-            cin >> class1 >> class2 >> class3;
-            book = "书名：《 " + title += " 》\t\tISBN： " + isbn += "\t作者： " + author += "\t\t\t类别一： " + class1 +=
-            "\t类别二： " + class2 += "\t类别三: " + class3 += "\n";
+    FILE *fp = fopen("books.txt", "r+");
+    while (true) {
+        if (!fread(book, sizeof(Book), 1, fp)) {
+            delete book;
+            break;
         }
-        BookList.push_back(book);
-        ifs.close();
-        ofstream ofs;
-        ofs.open("books.txt", ios::out);
-        ofs << book;
-        ofs.close();
+        if (book->GetTitle() == message || book->GetIsbn() == message || book->GetAuthor() == message) {
+            char judge;
+            book->DisplayBook();
+            cout << "请问是否需要修改本书？  （Y/N）\n";
+            cin >> judge;
+            if (judge == 'Y') {
+                cout << "请输入修改后的书籍信息：\n";
+                book->InputBook();
+                success = true;
+            }
+        }
+        BookList.push_back(*book);
+    }
+    fclose(fp);
+    remove("books.txt");
+    fp = fopen("books.txt", "ab+");
+    fwrite(&BookList[0], BookList.size() * sizeof(Book), 1, fp);
+    fclose(fp);
+    if (success) {
+        cout << "修改成功！\n";
+    } else {
+        cout << "修改失败！\n";
     }
 }
 
@@ -242,9 +244,9 @@ void Administrator::addBook() {
     for (int i = 1; i <= num; i++) {
         auto book = new Book(i);
         FILE *fp = fopen("books.txt", "a+");
-        fprintf(fp, "书名：《 %s 》\t\tISBN： %s\t作者： %s\t\t\t类别一： %s\t类别二： %s\t类别三： %s\n",
+        fprintf(fp, "%s %s %s %s/%s %d",
                 book->GetTitle().c_str(), book->GetIsbn().c_str(), book->GetAuthor().c_str(),
-                book->GetClass1().c_str(), book->GetClass2().c_str(), book->GetClass3().c_str());
+                book->GetClass1().c_str(), book->GetClass2().c_str(), book->GetNumber());
         fclose(fp);
         delete book;
     }
@@ -253,13 +255,67 @@ void Administrator::addBook() {
 
 //管理员删除图书
 void Administrator::deleteBook() {
-
+    bool success = false;
+    auto book = new Book();
+    cout << "请输入您想要删除的图书的名字、作者或者ISBN编号：\n";
+    string message;
+    cin >> message;
+    vector<Book> BookList;
+    BookList.clear();
+    FILE *fp = fopen("books.txt", "r+");
+    while (true) {
+        if (!fread(book, sizeof(Book), 1, fp)) {
+            delete book;
+            break;
+        }
+        if (book->GetTitle() == message || book->GetIsbn() == message || book->GetAuthor() == message) {
+            char judge;
+            book->DisplayBook();
+            cout << "请问是否需要修改本书？  （Y/N）\n";
+            cin >> judge;
+            if (judge == 'Y') {
+                success = true;
+            } else {
+                BookList.push_back(*book);
+            }
+        } else {
+            BookList.push_back(*book);
+        }
+    }
+    fclose(fp);
+    remove("books.txt");
+    fp = fopen("books.txt", "ab+");
+    fwrite(&BookList[0], BookList.size() * sizeof(Book), 1, fp);
+    fclose(fp);
+    if (success) {
+        cout << "删除成功！\n";
+    } else {
+        cout << "删除失败！\n";
+    }
 }
 
-//管理员搜索图书
-void Administrator::searchBook() {
-
+void Administrator::exitSystem() {
+    vector<Administrator> AdList;
+    AdList.clear();
+    auto ap = new Administrator();
+    FILE *fp = fopen("Administrator.bin", "rb+");
+    while (true) {
+        if (!fread(ap, sizeof(Administrator), 1, fp)) {
+            delete ap;
+            break;
+        }
+        if (ap->getUsername() == m_username) {
+            *ap = *this;
+        }
+        AdList.push_back(*ap);
+    }
+    fclose(fp);
+    remove("Administrator.bin");
+    fp = fopen("Administrator.bin", "ab+");
+    fwrite(&AdList[0], AdList.size() * sizeof(Administrator), 1, fp);
+    fclose(fp);
 }
 
-
-
+int main() {
+    Administrator(1);
+}

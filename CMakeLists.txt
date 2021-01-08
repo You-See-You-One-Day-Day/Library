@@ -13,3 +13,4 @@ add_executable(main main.cpp)
 add_executable(Book Book.cpp)
 
 target_link_libraries(main library)
+target_link_libraries(Administrator library)

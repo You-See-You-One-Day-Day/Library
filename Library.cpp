@@ -341,5 +341,15 @@ void Library::UserMenu(CommonUser &commonUser) {
     }
 }
 
+void Library::LibraryInit() {
+    FILE *ad = fopen("Administrator.bin", "ab+");
+    FILE *cu = fopen("CommonUser.bin", "ab+");
+    FILE *book = fopen("books.txt","a+");
+    fclose(ad);
+    fclose(cu);
+    fclose(book);
+//    Book::BookInit();
+}
+
 
 

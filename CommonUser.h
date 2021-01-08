@@ -33,20 +33,24 @@ public:
     //管理员重置密码接口
     void resetPassword();
 
-    //普通用户搜索图书
-    void searchBook();
-
     //普通用户借书
     void borrowBook();
 
-    //普通用户可以还书
+    //普通用户还书
     void returnBook();
+
 //
     //普通用户写入借阅记录
-    void writeRecord();
+    void writeRecord(const Book&,bool);
 
     //普通用户查看借阅记录
     void viewRecord();
+
+    //退出系统
+    void exitSystem();
+
+    int m_bookNumber = 0;
+    string possessBooks[3]={};
 
 
 };

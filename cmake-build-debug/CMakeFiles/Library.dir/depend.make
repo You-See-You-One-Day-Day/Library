@@ -16,11 +16,13 @@ CMakeFiles/library.dir/CommonUser.cpp.o: ../CommonUser.h
 CMakeFiles/library.dir/CommonUser.cpp.o: ../User.h
 
 CMakeFiles/library.dir/Library.cpp.o: ../Administrator.h
+CMakeFiles/library.dir/Library.cpp.o: ../Book.h
 CMakeFiles/library.dir/Library.cpp.o: ../CommonUser.h
 CMakeFiles/library.dir/Library.cpp.o: ../Library.cpp
 CMakeFiles/library.dir/Library.cpp.o: ../Library.h
 CMakeFiles/library.dir/Library.cpp.o: ../User.h
 
+CMakeFiles/library.dir/User.cpp.o: ../Book.h
 CMakeFiles/library.dir/User.cpp.o: ../User.cpp
 CMakeFiles/library.dir/User.cpp.o: ../User.h
 

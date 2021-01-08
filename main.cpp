@@ -1,6 +1,7 @@
 #include "Library.h"
 
 int main() {
+    Library::LibraryInit();
     Administrator administrator;
     CommonUser commonUser;
     MainMenu:
@@ -18,6 +19,8 @@ int main() {
     } else {
         cout << "感谢您的使用" << endl;
     }
+    administrator.exitSystem();
+    commonUser.exitSystem();
     system("pause");
     return 0;
 }

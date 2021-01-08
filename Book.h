@@ -11,6 +11,8 @@
 #include<iomanip>
 #include<cstring>
 #include<cstring>
+#include <algorithm>
+#include <vector>
 
 using namespace std;
 
@@ -19,32 +21,47 @@ class Book {
     //构造Book类
 
 public:
-     explicit Book(int);
+    Book() = default;
+
+    explicit Book(int);
 
 
     ~Book() = default;
 
 public:
-    string GetTitle();                // 获取图书名称
+    [[nodiscard]] string GetTitle() const;                // 获取图书名称
 
-    string GetIsbn();                // 获取图书ISBN编号
+    [[nodiscard]] string GetIsbn() const;                // 获取图书ISBN编号
 
-    string GetAuthor();              // 获取图书作者
+    [[nodiscard]] string GetAuthor() const;              // 获取图书作者
 
-    string GetClass1();
+    [[nodiscard]] string GetClass1() const;
 
-    string GetClass2();
+    [[nodiscard]] string GetClass2() const;
 
-    string GetClass3();
-//    void DisplayBook(int iCount);   // 查看图书的信息
+    [[nodiscard]] int GetNumber() const;
+
+    [[nodiscard]] string IntoString() const;
+
+//    static void BookInit();
+
+    void InputBook();
+
+    void DisplayBook() const;   // 查看图书的信息
+
+    bool BeBorrowed();
+
+    bool BeReturned();
+
 
 protected:
     string m_title;
     string m_isbn;
     string m_author;
-    string m_class1;
-    string m_class2;
-    string m_class3;
+    int m_number{};
+    char m_class1[128]{};
+    char m_class2[128]{};
+    string m_class;
 
 };
 

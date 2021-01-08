@@ -84,7 +84,7 @@ void CommonUser::modifyPassword() {
             vector<CommonUser> CuList;
             CuList.clear();
             auto cp = new CommonUser();
-            FILE *fp = fopen("CommonUser.bin", "ab+");
+            FILE *fp = fopen("CommonUser.bin", "rb+");
             while (true) {
                 if (!fread(cp, sizeof(CommonUser), 1, fp)) {
                     delete cp;
@@ -96,6 +96,9 @@ void CommonUser::modifyPassword() {
                 }
                 CuList.push_back(*cp);
             }
+            fclose(fp);
+            remove("CommonUser.bin");
+            fp = fopen("CommonUser.bin", "ab+");
             fwrite(&CuList[0], CuList.size() * sizeof(CommonUser), 1, fp);
             fclose(fp);
             cout << "修改密码成功！\n";
@@ -129,30 +132,133 @@ void CommonUser::resetPassword() {
 }
 
 
-//普通用户搜索图书
-void CommonUser::searchBook() {
-//    FILE
-}
-
-
 //普通用户借书
 void CommonUser::borrowBook() {
+    bool success = false;
+    auto book = new Book();
+    cout << "请输入您想要借阅的图书的名字、作者或者ISBN编号：\n";
+    string message;
+    cin >> message;
+    vector<Book> BookList;
+    BookList.clear();
+    FILE *fp = fopen("books.txt", "r+");
+    while (true) {
+        if (!fread(book, sizeof(Book), 1, fp)) {
+            delete book;
+            break;
+        }
+        if (book->GetTitle() == message || book->GetIsbn() == message || book->GetAuthor() == message) {
+            char judge;
+            book->DisplayBook();
+            cout << "请问是否需要借阅本书？  （Y/N）\n";
+            cin >> judge;
+            if (judge == 'Y') {
+                if (m_bookNumber >= 3) {
+                    cout << "借阅失败，您借阅的图书已超过三本，请先归还后再继续借阅\n";
+                } else {
+                    if (book->BeBorrowed()) {
+                        for (auto & possessBook : possessBooks) {
+                            if (possessBook.empty()) {
+                                possessBook = book->IntoString();
+                                break;
+                            }
+                        }
+                        writeRecord(*book, true);
+                        success = true;
+                    }
+                }
+            }
+        }
+        BookList.push_back(*book);
+    }
+    fclose(fp);
+    remove("books.txt");
+    fp = fopen("books.txt", "ab+");
+    fwrite(&BookList[0], BookList.size() * sizeof(Book), 1, fp);
+    fclose(fp);
+    if (success) {
+        cout << "借阅成功！\n";
+    } else {
+        cout << "借阅失败！\n";
+    }
 
 }
 
 //普通用户可以还书
 void CommonUser::returnBook() {
 
+
 }
 
 //普通用户记录借阅记录
-void CommonUser::writeRecord() {
-
+void CommonUser::writeRecord(const Book &book, bool borrow) {
+    if (borrow) {
+        time_t tp;
+        struct tm *p;
+        time(&tp);
+        p = localtime(&tp);
+        FILE *fp = fopen("BookRecord.txt", "a+");
+        fprintf(fp, "用户名： %s\t\t\t借书时间： %d/%d/%d\t%d:%02d:%02d\t\t书名：%s\tISBN：%s\t作者：%s\n",
+                m_username.c_str(), 1900 + p->tm_year, 1 + p->tm_mon, p->tm_mday, p->tm_hour, p->tm_min, p->tm_sec,
+                book.GetTitle().c_str(), book.GetIsbn().c_str(), book.GetAuthor().c_str());
+        fclose(fp);
+    } else {
+        time_t tp;
+        struct tm *p;
+        time(&tp);
+        p = localtime(&tp);
+        FILE *fp = fopen("BookRecord.txt", "a+");
+        fprintf(fp, "用户名： %s\t\t\t还书时间： %d/%d/%d\t%d:%02d:%02d\t\t书名：%s\tISBN：%s\t作者：%s\n",
+                m_username.c_str(), 1900 + p->tm_year, 1 + p->tm_mon, p->tm_mday, p->tm_hour, p->tm_min, p->tm_sec,
+                book.GetTitle().c_str(), book.GetIsbn().c_str(), book.GetAuthor().c_str());
+        fclose(fp);
+    }
 }
 
 //普通用户查看借阅记录
 void CommonUser::viewRecord() {
+    ifstream ifs;
+    string str;
+    ifs.open("BookRecord.txt", ios::in);
+    while (!ifs.eof()) {
+        bool locate = false;
+        getline(ifs, str);
+        istringstream is(str);
+        do {
+            string word;
+            is >> word;
+            if (word == m_username) {
+                locate = true;
+                break;
+            }
+        } while (is);
+        if (locate) {
+            cout << str << endl;
+        }
+    }
+    ifs.close();
+}
 
+void CommonUser::exitSystem() {
+    vector<CommonUser> CuList;
+    CuList.clear();
+    auto cp = new CommonUser();
+    FILE *fp = fopen("CommonUser.bin", "rb+");
+    while (true) {
+        if (!fread(cp, sizeof(CommonUser), 1, fp)) {
+            delete cp;
+            break;
+        }
+        if (cp->getUsername() == m_username) {
+            *cp = *this;
+        }
+        CuList.push_back(*cp);
+    }
+    fclose(fp);
+    remove("CommonUser.bin");
+    fp = fopen("CommonUser.bin", "ab+");
+    fwrite(&CuList[0], CuList.size() * sizeof(CommonUser), 1, fp);
+    fclose(fp);
 }
 
 

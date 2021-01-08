@@ -57,13 +57,8 @@ public:
     //管理员删除图书
    static void deleteBook();
 
-    //管理员搜索图书
-    static void searchBook();
-
-
-private:
-    //管理员权限
-    bool permission = true;
+    //退出系统
+    void exitSystem();
 };
 
 

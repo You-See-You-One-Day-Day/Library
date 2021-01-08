@@ -12,6 +12,8 @@
 #include <fstream>
 #include <sstream>
 #include <vector>
+#include <regex>
+#include "Book.h"
 
 using namespace std;
 
@@ -41,6 +43,9 @@ public:
 
     //查询登录记录
     void  ViewOnlineRecord();
+
+    //搜索图书
+    static void searchBook();
 
 
     bool Online{};  //在线状态
