@@ -5,12 +5,12 @@
 #ifndef LIBRARY_BOOK_H
 #define LIBRARY_BOOK_H
 
-#include<iostream>
-#include<string>
-#include<fstream>
-#include<iomanip>
-#include<cstring>
-#include<cstring>
+#include <iostream>
+#include <string>
+#include <fstream>
+#include <sstream>
+#include <iomanip>
+#include <cstring>
 #include <algorithm>
 #include <vector>
 
@@ -25,29 +25,33 @@ public:
 
     explicit Book(int);
 
+    explicit Book(const string &);
+
 
     ~Book() = default;
 
 public:
     [[nodiscard]] string GetTitle() const;                // 获取图书名称
 
-    [[nodiscard]] string GetIsbn() const;                // 获取图书ISBN编号
+    [[nodiscard]]  string GetIsbn() const;                // 获取图书ISBN编号
 
-    [[nodiscard]] string GetAuthor() const;              // 获取图书作者
+    [[nodiscard]]  string GetAuthor() const;              // 获取图书作者
 
-    [[nodiscard]] string GetClass1() const;
 
-    [[nodiscard]] string GetClass2() const;
-
-    [[nodiscard]] int GetNumber() const;
+    [[maybe_unused]] [[nodiscard]] int GetNumber() const;
 
     [[nodiscard]] string IntoString() const;
 
-//    static void BookInit();
+    [[maybe_unused]] [[nodiscard]] string GetClass() const;
+
+    static void BookInit();
+
+    [[nodiscard]] string IntoString(int) const;
+
 
     void InputBook();
 
-    void DisplayBook() const;   // 查看图书的信息
+    [[maybe_unused]] void DisplayBook() const;   // 查看图书的信息
 
     bool BeBorrowed();
 
@@ -58,9 +62,7 @@ protected:
     string m_title;
     string m_isbn;
     string m_author;
-    int m_number{};
-    char m_class1[128]{};
-    char m_class2[128]{};
+    int m_number = 0;
     string m_class;
 
 };

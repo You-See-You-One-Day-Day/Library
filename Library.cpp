@@ -241,7 +241,7 @@ void Library::UserMenu(Administrator &administrator) {
         case 0: {
             administrator.modifyPassword();
             cout << "检测到密码已修改，请重新登录\n";
-            goto start;
+            break;
         }
         case 1: {
             Administrator::searchBook();
@@ -310,7 +310,7 @@ void Library::UserMenu(CommonUser &commonUser) {
             break;
         }
         case 1: {
-            commonUser.searchBook();
+            CommonUser::searchBook();
             goto start;
         }
         case 2: {
@@ -348,7 +348,7 @@ void Library::LibraryInit() {
     fclose(ad);
     fclose(cu);
     fclose(book);
-//    Book::BookInit();
+    Book::BookInit();
 }
 
 

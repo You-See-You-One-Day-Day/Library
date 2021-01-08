@@ -8,7 +8,7 @@
 using namespace std;
 
 Book::Book(int num) {
-    cout << "您正在创建第" << num << "图书\n";
+    cout << "您正在创建第" << num << "种图书\n";
     InputBook();
 }
 
@@ -27,15 +27,12 @@ string Book::GetAuthor() const {
     return m_author;
 }
 
-string Book::GetClass1() const {
-    return m_class1;
+
+[[maybe_unused]] string Book::GetClass() const {
+    return m_class;
 }
 
-string Book::GetClass2() const {
-    return m_class2;
-}
-
-int Book::GetNumber() const {
+[[maybe_unused]] int Book::GetNumber() const {
     return m_number;
 }
 
@@ -47,36 +44,24 @@ void Book::InputBook() {
     cout << "请输入作者：\n";
     cin >> m_author;
     cout << "请输入分类号：\n";
-    m_class = to_string(scanf("%s/%s", m_class1, m_class2));
+    cin >> m_class;
     cout << "请输入书的数量：\n";
     cin >> m_number;
 }
 
-void Book::DisplayBook() const {
-    cout << setw(40) << left << "《" << GetTitle() << "》" << setw(20) << left
-         << "ISBN：" << GetIsbn() << setw(30) << left << "作者：" << GetAuthor()
-         << setw(20) << left << "数量：" << GetNumber() << endl;
+[[maybe_unused]] void Book::DisplayBook() const {
+    cout << IntoString(1) << endl;
 }
 
-//void Book::BookInit() {
-//    auto book = new Book;
-//    vector<Book> BookList;
-//    BookList.clear();
-//    FILE *fp = fopen("books.txt", "r+");
-//    while (true) {
-//        if (!fread(book, sizeof(Book), 1, fp)) {
-//            delete book;
-//            break;
-//        }
-//        BookList.push_back(*book);
-//    }
-//    sort(BookList.begin(), BookList.end());
-//}
-
-
-string Book::IntoString()const {
+string Book::IntoString() const {
     string s;
     s = m_title + ' ' + m_isbn + ' ' + m_author + ' ' + m_class;
+    return s;
+}
+
+string Book::IntoString(int) const {
+    string s;
+    s = m_title + ' ' + m_isbn + ' ' + m_author + ' ' + m_class + ' ' + to_string(m_number) + '\n';
     return s;
 }
 
@@ -86,12 +71,103 @@ bool Book::BeBorrowed() {
         return false;
     } else {
         m_number--;
-        cout << "借阅成功！\n";
+        vector<string> BookList;
+        BookList.clear();
+        ifstream ifs;
+        ifs.open("books.txt", ios::in);
+        string book;
+        while (!ifs.eof()) {
+            getline(ifs, book);
+            istringstream is(book);
+            do {
+                string word;
+                is >> word;
+                if (word == m_title || word == m_isbn) {
+                    book = IntoString(1);
+                    break;
+                }
+            } while (is);
+            BookList.push_back(book);
+        }
+        ifs.close();
+        remove("books.txt");
+        ofstream ofs;
+        ofs.open("books.txt", ios::app);
+        for (auto &i : BookList) {
+            ofs << i;
+            ofs << endl;
+
+        }
+        ofs.close();
         return true;
     }
 }
 
 bool Book::BeReturned() {
     m_number++;
+    vector<string> BookList;
+    BookList.clear();
+    ifstream ifs;
+    ifs.open("books.txt", ios::in);
+    string book;
+    while (!ifs.eof()) {
+        getline(ifs, book);
+        istringstream is(book);
+        do {
+            string word;
+            is >> word;
+            if (word == m_title || word == m_isbn) {
+                book = IntoString(1);
+                break;
+            }
+        } while (is);
+        BookList.push_back(book);
+    }
+    ifs.close();
+    remove("books.txt");
+    ofstream ofs;
+    ofs.open("books.txt", ios::app);
+    for (auto &i : BookList) {
+        ofs << i;
+        ofs << endl;
+    }
+    ofs.close();
     return true;
+}
+
+Book::Book(const string &book) {
+    vector<string> message;
+    string result;
+    stringstream input(book);
+    while (input >> result) {
+        message.push_back(result);
+    }
+    m_title = message[0];
+    m_isbn = message[1];
+    m_author = message[2];
+    m_class = message[3];
+    m_number = stoi(message[4]);
+}
+
+void Book::BookInit() {
+    vector<string> BookList;
+    BookList.clear();
+    ifstream ifs;
+    ifs.open("books.txt", ios::in);
+    string book;
+    while (!ifs.eof()) {
+        getline(ifs, book);
+        BookList.push_back(book);
+    }
+    ifs.close();
+    sort(BookList.begin(), BookList.end());
+    remove("books.txt");
+    ofstream ofs;
+    ofs.open("books.txt", ios::app);
+    for (auto &i : BookList) {
+        ofs << i;
+        ofs << endl;
+
+    }
+    ofs.close();
 }

@@ -134,60 +134,147 @@ void CommonUser::resetPassword() {
 
 //普通用户借书
 void CommonUser::borrowBook() {
+    start:
     bool success = false;
-    auto book = new Book();
     cout << "请输入您想要借阅的图书的名字、作者或者ISBN编号：\n";
     string message;
     cin >> message;
-    vector<Book> BookList;
+    vector<string> BookList;
     BookList.clear();
-    FILE *fp = fopen("books.txt", "r+");
-    while (true) {
-        if (!fread(book, sizeof(Book), 1, fp)) {
-            delete book;
-            break;
-        }
-        if (book->GetTitle() == message || book->GetIsbn() == message || book->GetAuthor() == message) {
+    ifstream ifs;
+    ifs.open("books.txt", ios::in);
+    string book;
+    while (!ifs.eof()) {
+        bool locate = false;
+        getline(ifs, book);
+        istringstream is(book);
+        do {
+            string word;
+            is >> word;
+            if (word == message) {
+                locate = true;
+                break;
+            }
+        } while (is);
+        if (locate) {
             char judge;
-            book->DisplayBook();
-            cout << "请问是否需要借阅本书？  （Y/N）\n";
+            cout << book << endl;
+            cout << "请问是否借阅这本书?     (Y/N)\n";
             cin >> judge;
             if (judge == 'Y') {
-                if (m_bookNumber >= 3) {
-                    cout << "借阅失败，您借阅的图书已超过三本，请先归还后再继续借阅\n";
-                } else {
-                    if (book->BeBorrowed()) {
-                        for (auto & possessBook : possessBooks) {
-                            if (possessBook.empty()) {
-                                possessBook = book->IntoString();
-                                break;
-                            }
+                Book temp(book);
+                if (temp.BeBorrowed()) {
+                    book = temp.IntoString(1);
+                    for (auto &possessBook : possessBooks) {
+                        if (possessBook.empty()) {
+                            possessBook = temp.IntoString();
+                            break;
                         }
-                        writeRecord(*book, true);
-                        success = true;
                     }
+                    writeRecord(temp, true);
+                    success = true;
                 }
             }
         }
-        BookList.push_back(*book);
+        BookList.push_back(book);
     }
-    fclose(fp);
+    ifs.close();
     remove("books.txt");
-    fp = fopen("books.txt", "ab+");
-    fwrite(&BookList[0], BookList.size() * sizeof(Book), 1, fp);
-    fclose(fp);
+    ofstream ofs;
+    ofs.open("books.txt", ios::app);
+    for (auto &i : BookList) {
+        ofs << i;
+        ofs << endl;
+    }
+    ofs.close();
     if (success) {
         cout << "借阅成功！\n";
     } else {
         cout << "借阅失败！\n";
+    }
+    char judge;
+    cout << "是否继续借阅？    (Y/N)\n";
+    cin >> judge;
+    if (judge == 'Y') {
+        goto start;
     }
 
 }
 
 //普通用户可以还书
 void CommonUser::returnBook() {
-
-
+    start:
+    bool success = false;
+    bool notPossess =possessBooks->empty();
+    if (notPossess) {
+        cout << "您现在未归还的书籍有：\n";
+        for (auto &possessBook : possessBooks) {
+            cout << possessBook << endl;
+        }
+        cout << "请输入您想要归还的图书的名字，作者，出版号或者ISBN编号：\n";
+        string message;
+        cin >> message;
+        vector<string> BookList;
+        BookList.clear();
+        ifstream ifs;
+        ifs.open("books.txt", ios::in);
+        string book;
+        while (!ifs.eof()) {
+            bool locate = false;
+            getline(ifs, book);
+            istringstream is(book);
+            do {
+                string word;
+                is >> word;
+                if (word == message) {
+                    locate = true;
+                    break;
+                }
+            } while (is);
+            if (locate) {
+                char judge;
+                cout << book << endl;
+                cout << "请问是否归还这本书?     (Y/N)\n";
+                cin >> judge;
+                if (judge == 'Y') {
+                    Book temp(book);
+                    book = temp.IntoString(1);
+                    if (temp.BeReturned()) {
+                        book = temp.IntoString(1);
+                        for (auto &possessBook : possessBooks) {
+                            if (possessBook == temp.IntoString()) {
+                                possessBook = {};
+                                writeRecord(temp, false);
+                                success = true;
+                            }
+                            break;
+                        }
+                    }
+                }
+            }
+            BookList.push_back(book);
+        }
+        ifs.close();
+        remove("books.txt");
+        ofstream ofs;
+        ofs.open("books.txt", ios::app);
+        for (auto &i : BookList) {
+            ofs << i;
+            ofs << endl;
+        }
+        ofs.close();
+        if (success) {
+            cout << "归还成功！\n";
+        } else {
+            cout << "归还失败！\n";
+        }
+        char judge;
+        cout << "是否继续归还？    (Y/N)\n";
+        cin >> judge;
+        if (judge == 'Y') {
+            goto start;
+        }
+    }
 }
 
 //普通用户记录借阅记录
