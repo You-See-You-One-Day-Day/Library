@@ -144,71 +144,6 @@ main/fast:
 .PHONY : main/fast
 
 #=============================================================================
-# Target rules for targets named Book
-
-# Build rule for target.
-Book: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Book
-.PHONY : Book
-
-# fast build rule for target.
-Book/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Book.dir/build.make CMakeFiles/Book.dir/build
-.PHONY : Book/fast
-
-#=============================================================================
-# Target rules for targets named CommonUser
-
-# Build rule for target.
-CommonUser: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CommonUser
-.PHONY : CommonUser
-
-# fast build rule for target.
-CommonUser/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CommonUser.dir/build.make CMakeFiles/CommonUser.dir/build
-.PHONY : CommonUser/fast
-
-#=============================================================================
-# Target rules for targets named Administrator
-
-# Build rule for target.
-Administrator: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Administrator
-.PHONY : Administrator
-
-# fast build rule for target.
-Administrator/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Administrator.dir/build.make CMakeFiles/Administrator.dir/build
-.PHONY : Administrator/fast
-
-#=============================================================================
-# Target rules for targets named User
-
-# Build rule for target.
-User: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 User
-.PHONY : User
-
-# fast build rule for target.
-User/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/User.dir/build.make CMakeFiles/User.dir/build
-.PHONY : User/fast
-
-#=============================================================================
-# Target rules for targets named Library
-
-# Build rule for target.
-Library: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Library
-.PHONY : Library
-
-# fast build rule for target.
-Library/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Library.dir/build.make CMakeFiles/Library.dir/build
-.PHONY : Library/fast
-
-#=============================================================================
 # Target rules for targets named library
 
 # Build rule for target.
@@ -227,7 +162,6 @@ Administrator.o: Administrator.cpp.o
 
 # target to build an object file
 Administrator.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Administrator.dir/build.make CMakeFiles/Administrator.dir/Administrator.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/library.dir/build.make CMakeFiles/library.dir/Administrator.cpp.o
 .PHONY : Administrator.cpp.o
 
@@ -237,7 +171,6 @@ Administrator.i: Administrator.cpp.i
 
 # target to preprocess a source file
 Administrator.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Administrator.dir/build.make CMakeFiles/Administrator.dir/Administrator.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/library.dir/build.make CMakeFiles/library.dir/Administrator.cpp.i
 .PHONY : Administrator.cpp.i
 
@@ -247,7 +180,6 @@ Administrator.s: Administrator.cpp.s
 
 # target to generate assembly for a file
 Administrator.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Administrator.dir/build.make CMakeFiles/Administrator.dir/Administrator.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/library.dir/build.make CMakeFiles/library.dir/Administrator.cpp.s
 .PHONY : Administrator.cpp.s
 
@@ -257,7 +189,6 @@ Book.o: Book.cpp.o
 
 # target to build an object file
 Book.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Book.dir/build.make CMakeFiles/Book.dir/Book.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/library.dir/build.make CMakeFiles/library.dir/Book.cpp.o
 .PHONY : Book.cpp.o
 
@@ -267,7 +198,6 @@ Book.i: Book.cpp.i
 
 # target to preprocess a source file
 Book.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Book.dir/build.make CMakeFiles/Book.dir/Book.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/library.dir/build.make CMakeFiles/library.dir/Book.cpp.i
 .PHONY : Book.cpp.i
 
@@ -277,7 +207,6 @@ Book.s: Book.cpp.s
 
 # target to generate assembly for a file
 Book.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Book.dir/build.make CMakeFiles/Book.dir/Book.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/library.dir/build.make CMakeFiles/library.dir/Book.cpp.s
 .PHONY : Book.cpp.s
 
@@ -287,7 +216,6 @@ CommonUser.o: CommonUser.cpp.o
 
 # target to build an object file
 CommonUser.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CommonUser.dir/build.make CMakeFiles/CommonUser.dir/CommonUser.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/library.dir/build.make CMakeFiles/library.dir/CommonUser.cpp.o
 .PHONY : CommonUser.cpp.o
 
@@ -297,7 +225,6 @@ CommonUser.i: CommonUser.cpp.i
 
 # target to preprocess a source file
 CommonUser.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CommonUser.dir/build.make CMakeFiles/CommonUser.dir/CommonUser.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/library.dir/build.make CMakeFiles/library.dir/CommonUser.cpp.i
 .PHONY : CommonUser.cpp.i
 
@@ -307,7 +234,6 @@ CommonUser.s: CommonUser.cpp.s
 
 # target to generate assembly for a file
 CommonUser.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CommonUser.dir/build.make CMakeFiles/CommonUser.dir/CommonUser.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/library.dir/build.make CMakeFiles/library.dir/CommonUser.cpp.s
 .PHONY : CommonUser.cpp.s
 
@@ -317,7 +243,6 @@ Library.o: Library.cpp.o
 
 # target to build an object file
 Library.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Library.dir/build.make CMakeFiles/Library.dir/Library.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/library.dir/build.make CMakeFiles/library.dir/Library.cpp.o
 .PHONY : Library.cpp.o
 
@@ -327,7 +252,6 @@ Library.i: Library.cpp.i
 
 # target to preprocess a source file
 Library.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Library.dir/build.make CMakeFiles/Library.dir/Library.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/library.dir/build.make CMakeFiles/library.dir/Library.cpp.i
 .PHONY : Library.cpp.i
 
@@ -337,7 +261,6 @@ Library.s: Library.cpp.s
 
 # target to generate assembly for a file
 Library.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Library.dir/build.make CMakeFiles/Library.dir/Library.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/library.dir/build.make CMakeFiles/library.dir/Library.cpp.s
 .PHONY : Library.cpp.s
 
@@ -347,7 +270,6 @@ User.o: User.cpp.o
 
 # target to build an object file
 User.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/User.dir/build.make CMakeFiles/User.dir/User.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/library.dir/build.make CMakeFiles/library.dir/User.cpp.o
 .PHONY : User.cpp.o
 
@@ -357,7 +279,6 @@ User.i: User.cpp.i
 
 # target to preprocess a source file
 User.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/User.dir/build.make CMakeFiles/User.dir/User.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/library.dir/build.make CMakeFiles/library.dir/User.cpp.i
 .PHONY : User.cpp.i
 
@@ -367,7 +288,6 @@ User.s: User.cpp.s
 
 # target to generate assembly for a file
 User.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/User.dir/build.make CMakeFiles/User.dir/User.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/library.dir/build.make CMakeFiles/library.dir/User.cpp.s
 .PHONY : User.cpp.s
 
@@ -406,11 +326,6 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... Administrator"
-	@echo "... Book"
-	@echo "... CommonUser"
-	@echo "... Library"
-	@echo "... User"
 	@echo "... library"
 	@echo "... main"
 	@echo "... Administrator.o"
