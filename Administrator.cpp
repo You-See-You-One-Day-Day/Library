@@ -10,10 +10,12 @@
 Administrator::Administrator(int) {
     char judge;
     cout << "您正在创建管理员用户\n";
+
     cout << "请输入用户名： \n";
     start:
     cin >> m_username;
-    FILE *fp = fopen("Administrator.bin", "rb+");
+
+    FILE *fp = fopen("Administrator.bin", "rb");
     if (fp != nullptr) {
         auto ap = new Administrator;
         bool exist = false;
@@ -94,9 +96,6 @@ void Administrator::modifyPassword() {
                 }
                 AdList.push_back(*ap);
             }
-            fclose(fp);
-            remove("Administrator.bin");
-            fp = fopen("Administrator.bin", "ab+");
             fwrite(&AdList[0], AdList.size() * sizeof(Administrator), 1, fp);
             fclose(fp);
             cout << "修改密码成功！\n";
@@ -151,9 +150,6 @@ void Administrator::deleteCommonUser() {
             CuList.push_back(*cp);
         }
     }
-    fclose(fp);
-    remove("CommonUser.bin");
-    fp = fopen("CommonUser.bin", "ab+");
     fwrite(&CuList[0], CuList.size() * sizeof(CommonUser), 1, fp);
     fclose(fp);
     if (success) {
@@ -172,7 +168,7 @@ void Administrator::resetCommonUser() {
     cin >> resetUsername;
     vector<CommonUser> CuList;
     CuList.clear();
-    FILE *fp = fopen("CommonUser.bin", "rb+");
+    FILE *fp = fopen("CommonUser.bin", "wb+");
     while (true) {
         if (!fread(cp, sizeof(CommonUser), 1, fp)) {
             delete cp;
@@ -184,9 +180,6 @@ void Administrator::resetCommonUser() {
         }
         CuList.push_back(*cp);
     }
-    fclose(fp);
-    remove("CommonUser.bin");
-    fp = fopen("CommonUser.bin", "ab+");
     fwrite(&CuList[0], CuList.size() * sizeof(CommonUser), 1, fp);
     fclose(fp);
     if (success) {
@@ -196,11 +189,12 @@ void Administrator::resetCommonUser() {
     }
 }
 
+
 //管理员修改图书信息
 void Administrator::modifyBook() {
     bool success = false;
     auto book = new Book();
-    cout << "请输入您想要修改的图书的名字、作者或者ISBN编号：\n";
+    cout << "请输入您想修改的图书的名字、作者或者ISBN编号：\n";
     string message;
     cin >> message;
     vector<Book> BookList;
@@ -217,7 +211,7 @@ void Administrator::modifyBook() {
             cout << "请问是否需要修改本书？  （Y/N）\n";
             cin >> judge;
             if (judge == 'Y') {
-                cout << "请输入修改后的书籍信息：\n";
+                cout << "请输入修改后的信息\n";
                 book->InputBook();
                 success = true;
             }
@@ -234,21 +228,22 @@ void Administrator::modifyBook() {
     } else {
         cout << "修改失败！\n";
     }
+
 }
 
 //管理员增加图书
 void Administrator::addBook() {
     int num;
-    cout << "请问您想添加几本图书？";
+    cout << "请问您想添加几种图书？";
     cin >> num;
+    if (num>=1){
     for (int i = 1; i <= num; i++) {
         auto book = new Book(i);
-        FILE *fp = fopen("books.txt", "a+");
-        fprintf(fp, "%s %s %s %s/%s %d",
-                book->GetTitle().c_str(), book->GetIsbn().c_str(), book->GetAuthor().c_str(),
-                book->GetClass1().c_str(), book->GetClass2().c_str(), book->GetNumber());
+        FILE *fp = fopen("books.txt", "at+");
+        fwrite(book, sizeof(Book), 1, fp);
         fclose(fp);
         delete book;
+    }
     }
 
 }
@@ -257,7 +252,7 @@ void Administrator::addBook() {
 void Administrator::deleteBook() {
     bool success = false;
     auto book = new Book();
-    cout << "请输入您想要删除的图书的名字、作者或者ISBN编号：\n";
+    cout << "请输入您想删除的图书的名字、作者或者ISBN编号：\n";
     string message;
     cin >> message;
     vector<Book> BookList;
@@ -271,7 +266,7 @@ void Administrator::deleteBook() {
         if (book->GetTitle() == message || book->GetIsbn() == message || book->GetAuthor() == message) {
             char judge;
             book->DisplayBook();
-            cout << "请问是否需要修改本书？  （Y/N）\n";
+            cout << "请问是否需要删除本书？  （Y/N）\n";
             cin >> judge;
             if (judge == 'Y') {
                 success = true;
@@ -292,6 +287,7 @@ void Administrator::deleteBook() {
     } else {
         cout << "删除失败！\n";
     }
+
 }
 
 void Administrator::exitSystem() {
@@ -314,8 +310,4 @@ void Administrator::exitSystem() {
     fp = fopen("Administrator.bin", "ab+");
     fwrite(&AdList[0], AdList.size() * sizeof(Administrator), 1, fp);
     fclose(fp);
-}
-
-int main() {
-    Administrator(1);
 }

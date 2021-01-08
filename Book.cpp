@@ -8,7 +8,7 @@
 using namespace std;
 
 Book::Book(int num) {
-    cout << "您正在创建第" << num << "图书\n";
+    cout << "您正在创建第" << num << "种图书\n";
     InputBook();
 }
 
@@ -35,6 +35,10 @@ string Book::GetClass2() const {
     return m_class2;
 }
 
+string Book::GetClass() const{
+    return m_class;
+}
+
 int Book::GetNumber() const {
     return m_number;
 }
@@ -53,9 +57,7 @@ void Book::InputBook() {
 }
 
 void Book::DisplayBook() const {
-    cout << setw(40) << left << "《" << GetTitle() << "》" << setw(20) << left
-         << "ISBN：" << GetIsbn() << setw(30) << left << "作者：" << GetAuthor()
-         << setw(20) << left << "数量：" << GetNumber() << endl;
+    cout << IntoString()<<endl;
 }
 
 //void Book::BookInit() {
@@ -86,6 +88,25 @@ bool Book::BeBorrowed() {
         return false;
     } else {
         m_number--;
+        auto book = new Book;
+        vector<Book> BookList;
+        BookList.clear();
+        FILE *fp = fopen("books.txt", "r+");
+        while (true) {
+            if (!fread(book, sizeof(Book), 1, fp)) {
+                delete book;
+                break;
+            }
+            if (book->GetTitle() == m_title || book->GetIsbn() == m_isbn) {
+                *book = *this;
+            }
+            BookList.push_back(*book);
+        }
+        fclose(fp);
+        remove("books.txt");
+        fp = fopen("books.txt", "ab+");
+        fwrite(&BookList[0], BookList.size() * sizeof(Book), 1, fp);
+        fclose(fp);
         cout << "借阅成功！\n";
         return true;
     }

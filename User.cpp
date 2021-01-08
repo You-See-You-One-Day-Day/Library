@@ -91,9 +91,6 @@ void User::searchBook(){
                 success = true;
             }
         }
-        if (!success) {
-            cout << "对不起，未找到此书\n";
-        }
     } else {
         cout << "您正在使用模糊查找\n";
         cout << "请输入查找信息：\n";

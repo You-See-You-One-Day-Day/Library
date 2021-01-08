@@ -43,6 +43,7 @@ public:
 
     [[nodiscard]] string IntoString() const;
 
+    [[nodiscard]] string GetClass() const;
 //    static void BookInit();
 
     void InputBook();
