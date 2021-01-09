@@ -61,7 +61,7 @@ string Book::IntoString() const {
 
 string Book::IntoString(int) const {
     string s;
-    s = m_title + ' ' + m_isbn + ' ' + m_author + ' ' + m_class + ' ' + to_string(m_number) + '\n';
+    s = m_title + ' ' + m_isbn + ' ' + m_author + ' ' + m_class + ' ' + to_string(m_number);
     return s;
 }
 
@@ -95,7 +95,6 @@ bool Book::BeBorrowed() {
         ofs.open("books.txt", ios::app);
         for (auto &i : BookList) {
             ofs << i;
-            ofs << endl;
 
         }
         ofs.close();
@@ -129,7 +128,6 @@ bool Book::BeReturned() {
     ofs.open("books.txt", ios::app);
     for (auto &i : BookList) {
         ofs << i;
-        ofs << endl;
     }
     ofs.close();
     return true;
@@ -163,11 +161,59 @@ void Book::BookInit() {
     sort(BookList.begin(), BookList.end());
     remove("books.txt");
     ofstream ofs;
-    ofs.open("books.txt", ios::app);
+    ofs.open("books.txt", ios::out);
     for (auto &i : BookList) {
-        ofs << i;
-        ofs << endl;
+        ofs << i << endl;
+    }
+    ofs.close();
+}
 
+void Book::ClearLines() {
+    fstream fs;
+    fs.open("books.txt", ios::in | ios::out);
+    string line;
+    string temp;
+    deque<string> noBlankLine;
+    noBlankLine.clear();
+    while (getline(fs, line)) {
+        if (!line.empty()) {
+            noBlankLine.push_back(line);
+        }
+    }
+    fs.close();
+    ofstream emptyFile("books.txt");
+    emptyFile.close();
+    fstream target;
+    target.open("books.txt", ios::in | ios::out);
+    auto begin = noBlankLine.begin();
+    auto end = noBlankLine.end();
+    while (begin != end) {
+        temp = *begin;
+        target << temp << endl;
+        ++begin;
+    }
+    target.close();
+}
+
+void Book::QuickInput() {
+    string book;
+    vector<string> BookList;
+    BookList.clear();
+    cout <<  "您正在批量导入图书\n";
+    cout << "键入 # 停止导入\n";
+    while (getline(cin, book)) {
+        if (book == "#"){
+            cout << "已停止导入图书\n";
+            break;
+        }
+        if  (!book.empty()){
+            BookList.push_back(book);
+        }
+    }
+    ofstream ofs;
+    ofs.open("books.txt",ios::out);
+    for (auto& i : BookList) {
+        ofs << i <<endl;
     }
     ofs.close();
 }

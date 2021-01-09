@@ -183,13 +183,13 @@ void CommonUser::borrowBook() {
     ofstream ofs;
     ofs.open("books.txt", ios::app);
     for (auto &i : BookList) {
-        ofs << i;
-        ofs << endl;
+        ofs << i << endl;
     }
     ofs.close();
     if (success) {
         cout << "借阅成功！\n";
     } else {
+        cout << "未找到该书\n";
         cout << "借阅失败！\n";
     }
     char judge;
@@ -205,7 +205,7 @@ void CommonUser::borrowBook() {
 void CommonUser::returnBook() {
     start:
     bool success = false;
-    bool notPossess =possessBooks->empty();
+    bool notPossess = possessBooks->empty();
     if (notPossess) {
         cout << "您现在未归还的书籍有：\n";
         for (auto &possessBook : possessBooks) {
@@ -257,15 +257,15 @@ void CommonUser::returnBook() {
         ifs.close();
         remove("books.txt");
         ofstream ofs;
-        ofs.open("books.txt", ios::app);
+        ofs.open("books.txt", ios::out);
         for (auto &i : BookList) {
-            ofs << i;
-            ofs << endl;
+            ofs << i << endl;
         }
         ofs.close();
         if (success) {
             cout << "归还成功！\n";
         } else {
+            cout << "您未借阅此书\n";
             cout << "归还失败！\n";
         }
         char judge;
@@ -274,6 +274,8 @@ void CommonUser::returnBook() {
         if (judge == 'Y') {
             goto start;
         }
+    } else {
+        cout << "您尚未借阅图书，无需归还\n";
     }
 }
 
