@@ -87,7 +87,7 @@ void User::searchBook() {
                 string word;
                 is >> word;
                 if (word == message) {
-                    cout << book<<endl;
+                    cout << book << endl;
                     success = true;
                     break;
                 }
@@ -104,7 +104,7 @@ void User::searchBook() {
         while (!ifs.eof()) {
             getline(ifs, book);
             if (regex_search(book, pattern)) {
-                cout << book<<endl;
+                cout << book << endl;
                 success = true;
             }
         }

@@ -25,7 +25,7 @@ public:
 
     explicit Book(int);
 
-    explicit Book(const string &);
+    explicit Book(string);
 
 
     ~Book() = default;
@@ -37,17 +37,17 @@ public:
 
     [[nodiscard]]  string GetAuthor() const;              // 获取图书作者
 
-
-    [[maybe_unused]] [[nodiscard]] int GetNumber() const;
+    [[nodiscard]] int GetNumber() const;
 
     [[nodiscard]] string IntoString() const;
 
-    [[maybe_unused]] [[nodiscard]] string GetClass() const;
-
-    static void BookInit();
+    [[nodiscard]] string GetClass() const;
 
     [[nodiscard]] string IntoString(int) const;
 
+    static void BookInit();
+
+    static void ClearLines();
 
     void InputBook();
 
@@ -57,13 +57,14 @@ public:
 
     bool BeReturned();
 
+    static void QuickInput();
 
 protected:
     string m_title;
     string m_isbn;
     string m_author;
-    int m_number = 0;
     string m_class;
+    int m_number = 0;
 
 };
 

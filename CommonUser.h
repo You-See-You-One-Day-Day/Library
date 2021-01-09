@@ -49,9 +49,9 @@ public:
     //退出系统
     void exitSystem();
 
-    string possessBooks[3]={};
+    string possessBooks[3];
 
-
+    int m_bookNumber;
 };
 
 

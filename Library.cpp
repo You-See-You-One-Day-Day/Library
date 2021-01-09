@@ -190,11 +190,12 @@ bool Library::Login(CommonUser &a) {
 bool Library::MainMenu(Administrator &a, CommonUser &b) {
     int select;
     start:
-    cout << "\t\t\t ============ 图 书 管 理 系 统 ============\n";
-    cout << "\t\t\t|************** 0.用户文档  **************｜\n";
-    cout << "\t\t\t|************** 1.注册     **************｜\n";
-    cout << "\t\t\t|************** 2.登录     **************｜\n";
-    cout << "\t\t\t|************** 3.退出     **************｜\n\n";
+    cout << "\t\t\t============== 图 书 管 理 系 统 =============\n";
+    cout << "\t\t\t|*************** 0.用户文档  ***************｜\n";
+    cout << "\t\t\t|*************** 1.注册     ***************｜\n";
+    cout << "\t\t\t|*************** 2.登录     ***************｜\n";
+    cout << "\t\t\t|*************** 3.退出     ***************｜\n";
+    cout << "\t\t\t===========================================\n\n";
     cout << "请输入您的选择：";
     select:
     cin >> select;
@@ -223,17 +224,20 @@ bool Library::MainMenu(Administrator &a, CommonUser &b) {
 void Library::UserMenu(Administrator &administrator) {
     int select;
     start:
-    cout << "\t\t\t=============== 管 理 员 菜 单 ===============\n";
-    cout << "\t\t\t|************** 0.修改密码     **************｜\n";
-    cout << "\t\t\t|************** 1.搜索图书     **************｜\n";
-    cout << "\t\t\t|************** 2.增加图书     **************｜\n";
-    cout << "\t\t\t|************** 3.删除图书     **************｜\n";
-    cout << "\t\t\t|************** 4.修改图书信息  **************｜\n";
-    cout << "\t\t\t|************** 5.添加普通用户  **************｜\n";
-    cout << "\t\t\t|************** 6.删除普通用户  **************｜\n";
-    cout << "\t\t\t|************** 7.重置普通用户  **************｜\n";
-    cout << "\t\t\t|************** 8.查询登录记录  **************｜\n";
-    cout << "\t\t\t|************** 9.退出登录     **************｜\n\n";
+    cout << "\t\t\t================ 管 理 员 菜 单 ================\n";
+    cout << "\t\t\t|************** 0.修改密码      **************｜\n";
+    cout << "\t\t\t|************** 1.搜索图书      **************｜\n";
+    cout << "\t\t\t|************** 2.增加图书      **************｜\n";
+    cout << "\t\t\t|************** 3.删除图书      **************｜\n";
+    cout << "\t\t\t|************** 4.修改图书信息   **************｜\n";
+    cout << "\t\t\t|************** 5.批量导入图书   **************｜\n";
+    cout << "\t\t\t|************** 6.添加普通用户   **************｜\n";
+    cout << "\t\t\t|************** 7.删除普通用户   **************｜\n";
+    cout << "\t\t\t|************** 8.重置普通用户   **************｜\n";
+    cout << "\t\t\t|************** 9.查询登录记录   **************｜\n";
+    cout << "\t\t\t|************** 10.退出登录     **************｜\n";
+    cout << "\t\t\t==============================================\n\n";
+
     cout << "请输入您的选择：";
     select:
     cin >> select;
@@ -262,22 +266,26 @@ void Library::UserMenu(Administrator &administrator) {
             goto start;
         }
         case 5: {
-            Administrator::addCommonUser();
+            Book::QuickInput();
             goto start;
         }
         case 6: {
-            Administrator::deleteCommonUser();
+            Administrator::addCommonUser();
             goto start;
         }
         case 7: {
-            Administrator::resetCommonUser();
+            Administrator::deleteCommonUser();
             goto start;
         }
         case 8: {
-            administrator.ViewOnlineRecord();
+            Administrator::resetCommonUser();
             goto start;
         }
         case 9: {
+            administrator.ViewOnlineRecord();
+            goto start;
+        }
+        case 10: {
             administrator.Online = false;
             administrator.RecordOnline();
             break;
@@ -299,7 +307,8 @@ void Library::UserMenu(CommonUser &commonUser) {
     cout << "\t\t\t|************** 3.归还图书     **************｜\n";
     cout << "\t\t\t|************** 4.查询登录记录  **************｜\n";
     cout << "\t\t\t|************** 5.查询借阅记录  **************｜\n";
-    cout << "\t\t\t|************** 6.退出登录     **************｜\n\n";
+    cout << "\t\t\t|************** 6.退出登录     **************｜\n";
+    cout << "\t\t\t=============================================\n\n";
     cout << "请输入您的选择：";
     select:
     cin >> select;
@@ -344,7 +353,7 @@ void Library::UserMenu(CommonUser &commonUser) {
 void Library::LibraryInit() {
     FILE *ad = fopen("Administrator.bin", "ab+");
     FILE *cu = fopen("CommonUser.bin", "ab+");
-    FILE *book = fopen("books.txt","a+");
+    FILE *book = fopen("books.txt", "a+");
     fclose(ad);
     fclose(cu);
     fclose(book);

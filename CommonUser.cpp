@@ -61,7 +61,10 @@ CommonUser::CommonUser(int) {
     cout << "您已成功创建普通用户\n";
     cout << "您的用户名为： " << m_username << endl;
     cout << "您的密码为： " << m_password << endl;
-
+    m_bookNumber = 0;
+    for (auto & possessBook : possessBooks) {
+        possessBook = "";
+    }
 }
 
 
@@ -135,68 +138,73 @@ void CommonUser::resetPassword() {
 //普通用户借书
 void CommonUser::borrowBook() {
     start:
-    bool success = false;
-    cout << "请输入您想要借阅的图书的名字、作者或者ISBN编号：\n";
-    string message;
-    cin >> message;
-    vector<string> BookList;
-    BookList.clear();
-    ifstream ifs;
-    ifs.open("books.txt", ios::in);
-    string book;
-    while (!ifs.eof()) {
-        bool locate = false;
-        getline(ifs, book);
-        istringstream is(book);
-        do {
-            string word;
-            is >> word;
-            if (word == message) {
-                locate = true;
-                break;
-            }
-        } while (is);
-        if (locate) {
-            char judge;
-            cout << book << endl;
-            cout << "请问是否借阅这本书?     (Y/N)\n";
-            cin >> judge;
-            if (judge == 'Y') {
-                Book temp(book);
-                if (temp.BeBorrowed()) {
-                    book = temp.IntoString(1);
-                    for (auto &possessBook : possessBooks) {
-                        if (possessBook.empty()) {
-                            possessBook = temp.IntoString();
-                            break;
+    if (m_bookNumber < 3) {
+
+        bool success = false;
+        cout << "请输入您想要借阅的图书的名字、作者或者ISBN编号：\n";
+        string message;
+        cin >> message;
+        vector<string> BookList;
+        BookList.clear();
+        ifstream ifs;
+        ifs.open("books.txt", ios::in);
+        string book;
+        while (!ifs.eof()) {
+            bool locate = false;
+            getline(ifs, book);
+            istringstream is(book);
+            do {
+                string word;
+                is >> word;
+                if (word == message) {
+                    locate = true;
+                    break;
+                }
+            } while (is);
+            if (locate) {
+                char judge;
+                cout << book << endl;
+                cout << "请问是否借阅这本书?     (Y/N)\n";
+                cin >> judge;
+                if (judge == 'Y') {
+                    Book temp(book);
+                    if (temp.BeBorrowed()) {
+                        book = temp.IntoString(1);
+                        for (auto &possessBook : possessBooks) {
+                            if (possessBook.empty()) {
+                                possessBook = temp.IntoString();
+                                m_bookNumber++;
+                                break;
+                            }
                         }
+                        writeRecord(temp, true);
+                        success = true;
                     }
-                    writeRecord(temp, true);
-                    success = true;
                 }
             }
+            BookList.push_back(book);
         }
-        BookList.push_back(book);
-    }
-    ifs.close();
-    remove("books.txt");
-    ofstream ofs;
-    ofs.open("books.txt", ios::app);
-    for (auto &i : BookList) {
-        ofs << i;
-        ofs << endl;
-    }
-    ofs.close();
-    if (success) {
-        cout << "借阅成功！\n";
+        ifs.close();
+        remove("books.txt");
+        ofstream ofs;
+        ofs.open("books.txt", ios::out);
+        for (auto &i : BookList) {
+            ofs << i << endl;
+        }
+        ofs.close();
+        if (success) {
+            cout << "借阅成功！\n";
+        } else {
+            cout << "借阅失败！\n";
+        }
+        char judge;
+        cout << "是否继续借阅？    (Y/N)\n";
+        cin >> judge;
+        if (judge == 'Y') {
+            goto start;
+        }
     } else {
-        cout << "借阅失败！\n";
-    }
-    char judge;
-    cout << "是否继续借阅？    (Y/N)\n";
-    cin >> judge;
-    if (judge == 'Y') {
-        goto start;
+        cout << "您借阅的书籍数量超过规定数量，请归还后再进行借阅\n";
     }
 
 }
@@ -205,10 +213,9 @@ void CommonUser::borrowBook() {
 void CommonUser::returnBook() {
     start:
     bool success = false;
-    bool notPossess =possessBooks->empty();
-    if (notPossess) {
+    if (m_bookNumber >= 1) {
         cout << "您现在未归还的书籍有：\n";
-        for (auto &possessBook : possessBooks) {
+        for (auto & possessBook : possessBooks) {
             cout << possessBook << endl;
         }
         cout << "请输入您想要归还的图书的名字，作者，出版号或者ISBN编号：\n";
@@ -243,7 +250,7 @@ void CommonUser::returnBook() {
                         book = temp.IntoString(1);
                         for (auto &possessBook : possessBooks) {
                             if (possessBook == temp.IntoString()) {
-                                possessBook = {};
+                                possessBook = "";
                                 writeRecord(temp, false);
                                 success = true;
                             }
@@ -257,15 +264,15 @@ void CommonUser::returnBook() {
         ifs.close();
         remove("books.txt");
         ofstream ofs;
-        ofs.open("books.txt", ios::app);
+        ofs.open("books.txt", ios::out);
         for (auto &i : BookList) {
-            ofs << i;
-            ofs << endl;
+            ofs << i << endl;
         }
         ofs.close();
         if (success) {
             cout << "归还成功！\n";
         } else {
+            cout << "您未借阅此书\n";
             cout << "归还失败！\n";
         }
         char judge;
@@ -274,6 +281,8 @@ void CommonUser::returnBook() {
         if (judge == 'Y') {
             goto start;
         }
+    } else {
+        cout << "您尚未借阅图书，无需归还\n";
     }
 }
 

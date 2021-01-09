@@ -163,6 +163,7 @@ void Administrator::deleteCommonUser() {
     if (success) {
         cout << "删除用户成功！\n";
     } else {
+        cout << "未找到该用户\n";
         cout << "删除用户失败！\n";
     }
 }
@@ -196,6 +197,7 @@ void Administrator::resetCommonUser() {
     if (success) {
         cout << "重置用户成功！\n";
     } else {
+        cout << "未找到该用户\n";
         cout << "重置用户失败！\n";
     }
 }
@@ -210,9 +212,8 @@ void Administrator::addBook() {
             auto book = new Book(i);
             string Book = book->IntoString(1);
             ofstream ofs;
-            ofs.open("books.txt", ios::app);
-            ofs << Book;
-            ofs << endl;
+            ofs.open("books.txt", ios::out);
+            ofs << Book << endl;
             ofs.close();
         }
     }
@@ -260,10 +261,9 @@ void Administrator::deleteBook() {
     ifs.close();
     remove("books.txt");
     ofstream ofs;
-    ofs.open("books.txt", ios::app);
+    ofs.open("books.txt", ios::out);
     for (auto &i : BookList) {
-        ofs << i;
-        ofs <<endl;
+        ofs << i << endl;
     }
     ofs.close();
     if (success) {
@@ -275,9 +275,9 @@ void Administrator::deleteBook() {
     cout << "是否继续删除？    (Y/N)\n";
     cin >> judge;
     if (judge == 'Y') {
-        goto start;
+        goto
+                start;
     }
-
 }
 
 //管理员修改图书信息
@@ -311,7 +311,10 @@ void Administrator::modifyBook() {
             cin >> judge;
             if (judge == 'Y') {
                 Book temp;
+                cout << "请输入修改后的书籍信息";
                 temp.InputBook();
+                cout << "修改后的书籍信息：\n";
+                temp.DisplayBook();
                 book = temp.IntoString(1);
                 success = true;
             }
@@ -321,16 +324,15 @@ void Administrator::modifyBook() {
     ifs.close();
     remove("books.txt");
     ofstream ofs;
-    ofs.open("books.txt", ios::app);
+    ofs.open("books.txt", ios::out);
     for (auto &i : BookList) {
-        ofs << i;
-        ofs<< endl;
+        ofs << i << endl;
     }
     ofs.close();
     if (success) {
         cout << "修改成功！\n";
     } else {
-        cout << "删除失败！\n";
+        cout << "修改失败！\n";
     }
     char judge;
     cout << "是否继续修改？    (Y/N)\n";
