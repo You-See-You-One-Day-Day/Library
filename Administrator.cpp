@@ -269,7 +269,6 @@ void Administrator::deleteBook() {
     if (success) {
         cout << "删除成功！\n";
     } else {
-        cout << "未找到该书\n";
         cout << "删除失败！\n";
     }
     char judge;
@@ -312,7 +311,10 @@ void Administrator::modifyBook() {
             cin >> judge;
             if (judge == 'Y') {
                 Book temp;
+                cout << "请输入修改后的书籍信息";
                 temp.InputBook();
+                cout << "修改后的书籍信息：\n";
+                temp.DisplayBook();
                 book = temp.IntoString(1);
                 success = true;
             }
@@ -330,7 +332,6 @@ void Administrator::modifyBook() {
     if (success) {
         cout << "修改成功！\n";
     } else {
-        cout << "未找到该书\n";
         cout << "修改失败！\n";
     }
     char judge;

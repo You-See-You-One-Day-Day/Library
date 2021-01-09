@@ -25,7 +25,7 @@ public:
 
     explicit Book(int);
 
-    explicit Book(const string &);
+    explicit Book(string);
 
 
     ~Book() = default;
@@ -63,8 +63,8 @@ protected:
     string m_title;
     string m_isbn;
     string m_author;
-    int m_number = 0;
     string m_class;
+    int m_number = 0;
 
 };
 

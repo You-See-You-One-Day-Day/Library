@@ -92,7 +92,7 @@ bool Book::BeBorrowed() {
         ifs.close();
         remove("books.txt");
         ofstream ofs;
-        ofs.open("books.txt", ios::app);
+        ofs.open("books.txt", ios::out);
         for (auto &i : BookList) {
             ofs << i;
 
@@ -125,7 +125,7 @@ bool Book::BeReturned() {
     ifs.close();
     remove("books.txt");
     ofstream ofs;
-    ofs.open("books.txt", ios::app);
+    ofs.open("books.txt", ios::out);
     for (auto &i : BookList) {
         ofs << i;
     }
@@ -133,7 +133,7 @@ bool Book::BeReturned() {
     return true;
 }
 
-Book::Book(const string &book) {
+Book::Book(string book) {
     vector<string> message;
     string result;
     stringstream input(book);
@@ -146,6 +146,7 @@ Book::Book(const string &book) {
     m_class = message[3];
     m_number = stoi(message[4]);
 }
+
 
 void Book::BookInit() {
     vector<string> BookList;
@@ -199,21 +200,22 @@ void Book::QuickInput() {
     string book;
     vector<string> BookList;
     BookList.clear();
-    cout <<  "您正在批量导入图书\n";
+    cout << "您正在批量导入图书\n";
     cout << "键入 # 停止导入\n";
     while (getline(cin, book)) {
-        if (book == "#"){
+        if (book == "#") {
             cout << "已停止导入图书\n";
             break;
         }
-        if  (!book.empty()){
+        if (!book.empty()) {
             BookList.push_back(book);
         }
     }
     ofstream ofs;
-    ofs.open("books.txt",ios::out);
-    for (auto& i : BookList) {
-        ofs << i <<endl;
+    ofs.open("books.txt", ios::out);
+    for (auto &i : BookList) {
+        ofs << i << endl;
     }
     ofs.close();
+    cout <<"批量导入图书完成\n";
 }

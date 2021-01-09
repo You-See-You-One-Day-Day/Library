@@ -22,6 +22,6 @@ int main() {
     administrator.exitSystem();
     commonUser.exitSystem();
     Book::ClearLines();
-    system("pause");
+//    system("pause");
     return 0;
 }
