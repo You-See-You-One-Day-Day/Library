@@ -6,9 +6,29 @@
 
 #IncludeRegexTransform: 
 
+/Users/wuqiquan/CLionProjects/Library/Book.h
+iostream
+-
+string
+-
+fstream
+-
+sstream
+-
+iomanip
+-
+cstring
+-
+algorithm
+-
+vector
+-
+
 /Users/wuqiquan/CLionProjects/Library/CommonUser.cpp
 CommonUser.h
 /Users/wuqiquan/CLionProjects/Library/CommonUser.h
+Book.h
+/Users/wuqiquan/CLionProjects/Library/Book.h
 
 /Users/wuqiquan/CLionProjects/Library/CommonUser.h
 cstdio
@@ -25,4 +45,10 @@ fstream
 -
 sstream
 -
+vector
+-
+regex
+-
+Book.h
+/Users/wuqiquan/CLionProjects/Library/Book.h
 

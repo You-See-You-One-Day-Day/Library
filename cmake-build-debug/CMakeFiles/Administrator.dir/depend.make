@@ -3,5 +3,7 @@
 
 CMakeFiles/Administrator.dir/Administrator.cpp.o: ../Administrator.cpp
 CMakeFiles/Administrator.dir/Administrator.cpp.o: ../Administrator.h
+CMakeFiles/Administrator.dir/Administrator.cpp.o: ../Book.h
+CMakeFiles/Administrator.dir/Administrator.cpp.o: ../CommonUser.h
 CMakeFiles/Administrator.dir/Administrator.cpp.o: ../User.h
 

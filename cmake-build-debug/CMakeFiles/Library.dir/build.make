@@ -129,12 +129,26 @@ CMakeFiles/library.dir/Library.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/library.dir/Library.cpp.s"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wuqiquan/CLionProjects/Library/Library.cpp -o CMakeFiles/library.dir/Library.cpp.s
 
+CMakeFiles/library.dir/Book.cpp.o: CMakeFiles/library.dir/flags.make
+CMakeFiles/library.dir/Book.cpp.o: ../Book.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/wuqiquan/CLionProjects/Library/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/library.dir/Book.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/library.dir/Book.cpp.o -c /Users/wuqiquan/CLionProjects/Library/Book.cpp
+
+CMakeFiles/library.dir/Book.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/library.dir/Book.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/wuqiquan/CLionProjects/Library/Book.cpp > CMakeFiles/library.dir/Book.cpp.i
+
+CMakeFiles/library.dir/Book.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/library.dir/Book.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/wuqiquan/CLionProjects/Library/Book.cpp -o CMakeFiles/library.dir/Book.cpp.s
+
 # Object files for target library
 library_OBJECTS = \
 "CMakeFiles/library.dir/Administrator.cpp.o" \
 "CMakeFiles/library.dir/CommonUser.cpp.o" \
 "CMakeFiles/library.dir/User.cpp.o" \
-"CMakeFiles/library.dir/Library.cpp.o"
+"CMakeFiles/library.dir/Library.cpp.o" \
+"CMakeFiles/library.dir/Book.cpp.o"
 
 # External object files for target library
 library_EXTERNAL_OBJECTS =
@@ -143,9 +157,10 @@ liblibrary.a: CMakeFiles/library.dir/Administrator.cpp.o
 liblibrary.a: CMakeFiles/library.dir/CommonUser.cpp.o
 liblibrary.a: CMakeFiles/library.dir/User.cpp.o
 liblibrary.a: CMakeFiles/library.dir/Library.cpp.o
+liblibrary.a: CMakeFiles/library.dir/Book.cpp.o
 liblibrary.a: CMakeFiles/library.dir/build.make
 liblibrary.a: CMakeFiles/library.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/wuqiquan/CLionProjects/Library/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX static library liblibrary.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/wuqiquan/CLionProjects/Library/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX static library liblibrary.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/library.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/library.dir/link.txt --verbose=$(VERBOSE)
 

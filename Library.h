@@ -4,12 +4,12 @@
 
 
 //图书馆类
+#ifndef LIBRARY_LIBRARY_H
+#define LIBRARY_LIBRARY_H
 
 #include "Administrator.h"
 #include "CommonUser.h"
-
-#ifndef LIBRARY_LIBRARY_H
-#define LIBRARY_LIBRARY_H
+#include "Book.h"
 
 
 class Library {
@@ -20,6 +20,9 @@ public:
 
     //析构函数
     ~Library() = default;
+
+    //初始化函数
+    static void LibraryInit();
 
     //获取管理员人数
     static int getAdminNum();
@@ -35,11 +38,11 @@ public:
     static void RegisterMenu();
 
     //登录模块
-    static bool LoginMenu(Administrator &, CommonUser &);
+    static string LoginMenu(Administrator &, CommonUser &);
 
-    static void Login(CommonUser &);
+    static bool Login(CommonUser &);
 
-    static void Login(Administrator &);
+    static bool Login(Administrator &);
 
 };
 

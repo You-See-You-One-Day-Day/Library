@@ -42,6 +42,7 @@ void User::RecordOnline() {
     }
 }
 
+//查看登录记录
 void User::ViewOnlineRecord() {
     ifstream ifs;
     string str;
@@ -64,3 +65,58 @@ void User::ViewOnlineRecord() {
     }
     ifs.close();
 }
+
+void User::searchBook() {
+    start:
+    bool success = false;
+    string message;
+    char judge;
+    cout << "是否使用精确查找？  （Y/N）";
+    cin >> judge;
+    string book;
+    if (judge == 'Y') {
+        cout << "您正在使用精确查找\n";
+        cout << "请输入您想要查找的图书的名字、作者或者ISBN编号：\n";
+        cin >> message;
+        ifstream ifs;
+        ifs.open("books.txt", ios::in);
+        while (!ifs.eof()) {
+            getline(ifs, book);
+            istringstream is(book);
+            do {
+                string word;
+                is >> word;
+                if (word == message) {
+                    cout << book<<endl;
+                    success = true;
+                    break;
+                }
+            } while (is);
+        }
+        ifs.close();
+    } else {
+        cout << "您正在使用模糊查找\n";
+        cout << "请输入查找信息：\n";
+        cin >> message;
+        regex pattern(message);
+        ifstream ifs;
+        ifs.open("books.txt", ios::in);
+        while (!ifs.eof()) {
+            getline(ifs, book);
+            if (regex_search(book, pattern)) {
+                cout << book<<endl;
+                success = true;
+            }
+        }
+        ifs.close();
+    }
+    if (!success) {
+        cout << "对不起，未找到此书\n";
+    }
+    cout << "是否继续查找？    (Y/N)\n";
+    cin >> judge;
+    if (judge == 'Y') {
+        goto start;
+    }
+}
+

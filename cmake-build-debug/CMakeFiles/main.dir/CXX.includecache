@@ -11,8 +11,28 @@ cstdio
 -
 string
 -
+vector
+-
 User.h
 /Users/wuqiquan/CLionProjects/Library/User.h
+
+/Users/wuqiquan/CLionProjects/Library/Book.h
+iostream
+-
+string
+-
+fstream
+-
+sstream
+-
+iomanip
+-
+cstring
+-
+algorithm
+-
+vector
+-
 
 /Users/wuqiquan/CLionProjects/Library/CommonUser.h
 cstdio
@@ -25,6 +45,8 @@ Administrator.h
 /Users/wuqiquan/CLionProjects/Library/Administrator.h
 CommonUser.h
 /Users/wuqiquan/CLionProjects/Library/CommonUser.h
+Book.h
+/Users/wuqiquan/CLionProjects/Library/Book.h
 
 /Users/wuqiquan/CLionProjects/Library/User.h
 iostream
@@ -35,6 +57,12 @@ fstream
 -
 sstream
 -
+vector
+-
+regex
+-
+Book.h
+/Users/wuqiquan/CLionProjects/Library/Book.h
 
 /Users/wuqiquan/CLionProjects/Library/main.cpp
 Library.h
