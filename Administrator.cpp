@@ -117,6 +117,9 @@ void Administrator::modifyPassword() {
         times2--;
         if (times2 <= 0) {
             cout << "输入错误超过三次，拒绝修改\n";
+            Online = false;
+            RecordOnline();
+            exitSystem();
             exit(1);
         }
         cout << "密码输入错误，请重新输入\n";

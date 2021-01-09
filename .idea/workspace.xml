@@ -12,7 +12,26 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b9f0e92a-ac51-4ed2-8f47-170d2f268784" name="默认的" comment="图书管理系统1.0" />
+    <list default="true" id="b9f0e92a-ac51-4ed2-8f47-170d2f268784" name="默认的" comment="图书管理系统1.0">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Administrator.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Administrator.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Administrator.h" beforeDir="false" afterPath="$PROJECT_DIR$/Administrator.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CommonUser.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CommonUser.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CommonUser.h" beforeDir="false" afterPath="$PROJECT_DIR$/CommonUser.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Library.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library.h" beforeDir="false" afterPath="$PROJECT_DIR$/Library.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/BookRecord.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/BookRecord.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Library.dir/Administrator.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Library.dir/Administrator.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Library.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Library.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Library.dir/CommonUser.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Library.dir/CommonUser.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Library.dir/Library.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Library.dir/Library.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/main.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/main.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/UserOnlineRecord.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/UserOnlineRecord.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/books.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/books.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/liblibrary.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/liblibrary.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/main" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/main" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -126,6 +145,9 @@
       <workItem from="1610182568469" duration="2000" />
       <workItem from="1610182850844" duration="76000" />
       <workItem from="1610188143763" duration="1498000" />
+      <workItem from="1610190009079" duration="2314000" />
+      <workItem from="1610193456231" duration="199000" />
+      <workItem from="1610202474410" duration="1805000" />
     </task>
     <task id="LOCAL-00001" summary="完善用户模式大致架构">
       <created>1609250089486</created>
@@ -295,7 +317,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610189440795</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="图书管理系统1.0">
+      <created>1610190156444</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1610190156444</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -322,7 +351,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/master" />
+                        <option value="master" />
                       </list>
                     </value>
                   </entry>
@@ -356,6 +385,7 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="完善用户模式大致架构" />
     <MESSAGE value="实现用户创建" />
@@ -371,6 +401,9 @@
     <MESSAGE value="增加管理员批量导入功能" />
     <MESSAGE value="图书管理系统1.0" />
     <option name="LAST_COMMIT_MESSAGE" value="图书管理系统1.0" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

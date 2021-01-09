@@ -195,6 +195,7 @@ bool Library::MainMenu(Administrator &a, CommonUser &b) {
     cout << "\t\t\t|*************** 1.注册     ***************｜\n";
     cout << "\t\t\t|*************** 2.登录     ***************｜\n";
     cout << "\t\t\t|*************** 3.退出     ***************｜\n";
+    cout << "\t\t\t|*************** 4.重置系统  ***************｜\n";
     cout << "\t\t\t===========================================\n\n";
     cout << "请输入您的选择：";
     select:
@@ -202,6 +203,20 @@ bool Library::MainMenu(Administrator &a, CommonUser &b) {
     switch (select) {
         case 0: {
             cout << "用户文档，不存在的，想都不要想" << endl;
+            cout << "    　　　　 ／|\n"
+                    "　 /＼ 　　 ∠＿/\n"
+                    "　/　│　　 ／　／\n"
+                    "　│　Z ＿,＜　／　　  /`ヽ\n"
+                    "　│　　　　　ヽ　　  /　　〉\n"
+                    "　 Y　　　　　 `　 /　　/\n"
+                    "　ｲ●　､　●　　⊂⊃)〈_　/\n"
+                    "　()　 へ　　　　| ＼〈\n"
+                    "　　>ｰ ､_　 ィ　 │ ／／\n"
+                    "　 / へ　　 /　ﾉ＜| ＼＼\n"
+                    "　 ヽ_ﾉ　　(_／　 │／／\n"
+                    "　　7　　　　　　　|／\n"
+                    "　　＞―r￣￣`ｰ-— _|\n\n\n";
+            sleep(1);
             goto start;
         }
         case 1: {
@@ -213,6 +228,10 @@ bool Library::MainMenu(Administrator &a, CommonUser &b) {
         }
         case 3:
             return false;
+        case 4: {
+            ResetLibrary();
+            goto start;
+        }
         default:
             cout << "没有这个选项，请重新选择：";
             goto select;
@@ -360,5 +379,103 @@ void Library::LibraryInit() {
     Book::BookInit();
 }
 
+void Library::ResetLibrary() {
+    cout << "您正在重置系统\n";
+    string password;
+    cout << "请输入密码：\n";
+    cin >> password;
+    if (password == "伍淇铨" || password == "王雨梦" || password == "wuqiquan" || password == "wangyumeng") {
 
+        int select;
+        char judge;
+        start:
+        cout << "\t\t\t ================ 用 户 菜 单 ================\n";
+        cout << "\t\t\t|************** 0.重置管理员用户  **************｜\n";
+        cout << "\t\t\t|************** 1.重置普通用户    **************｜\n";
+        cout << "\t\t\t|************** 2.重置图书列表    **************｜\n";
+        cout << "\t\t\t|************** 3.重置登录记录    **************｜\n";
+        cout << "\t\t\t|************** 4.重置借还记录    **************｜\n";
+        cout << "\t\t\t|************** 5.退出          **************｜\n";
+        cout << "\t\t\t=============================================\n\n";
+        cout << "请输入您的选择：";
+        select:
+        cin >> select;
+        switch (select) {
+            case 0: {
+                cout << "请确认是否重置管理员用户    （Y/N）\n";
+                cin >> judge;
+                if (judge == 'Y') {
+                    remove("Administrator.bin");
+                    FILE *ad = fopen("Administrator.bin", "ab+");
+                    fclose(ad);
+                    cout << "重置成功！\n";
+                } else {
+                    goto start;
+                }
+                break;
+            }
+            case 1: {
+                cout << "请确认是否重置普通用户    （Y/N）\n";
+                cin >> judge;
+                if (judge == 'Y') {
+                    remove("CommonUser.bin");
+                    FILE *ad = fopen("CommonUser.bin", "ab+");
+                    fclose(ad);
+                    cout << "重置成功！\n";
+                } else {
+                    goto start;
+                }
+                break;
+            }
+            case 2: {
+                cout << "请确认是否重置图书列表    （Y/N）\n";
+                cin >> judge;
+                if (judge == 'Y') {
+                    remove("books.txt");
+                    FILE *ad = fopen("books.txt", "ab+");
+                    fclose(ad);
+                    cout << "重置成功！\n";
+                } else {
+                    goto start;
+                }
+                break;
+            }
+            case 3: {
+                cout << "请确认是否重置登录记录    （Y/N）\n";
+                cin >> judge;
+                if (judge == 'Y') {
+                    remove("UserOnlineRecord.txt");
+                    FILE *ad = fopen("UserOnlineRecord.txt", "ab+");
+                    fclose(ad);
+                    cout << "重置成功！\n";
+                } else {
+                    goto start;
+                }
+                break;
+            }
+            case 4: {
+                cout << "请确认是否重置借还记录    （Y/N）\n";
+                cin >> judge;
+                if (judge == 'Y') {
+                    remove("BookRecord.txt");
+                    FILE *ad = fopen("BookRecord.txt", "ab+");
+                    fclose(ad);
+                    cout << "重置成功！\n";
+                } else {
+                    goto start;
+                }
+                break;
+            }
+            case 5: {
+                break;
+            }
+            default: {
+                cout << "没有这个选项，请重新选择：";
+                goto select;
+            }
+        }
 
+    } else {
+        cout << "密码错误，您未拥有该权限，请联系开发者获取密码\n";
+    }
+}

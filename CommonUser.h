@@ -51,7 +51,7 @@ public:
 
     string possessBooks[3];
 
-    int m_bookNumber;
+    int m_bookNumber{};
 };
 
 

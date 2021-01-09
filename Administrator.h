@@ -61,6 +61,5 @@ public:
     void exitSystem();
 };
 
-
 #endif //ADMINISTRATOR_H
 

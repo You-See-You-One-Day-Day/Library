@@ -10,8 +10,7 @@
 #include "Administrator.h"
 #include "CommonUser.h"
 #include "Book.h"
-
-
+#include <unistd.h>
 class Library {
 
 public:
@@ -43,6 +42,9 @@ public:
     static bool Login(CommonUser &);
 
     static bool Login(Administrator &);
+
+    //重置系统
+    static void ResetLibrary();
 
 };
 
