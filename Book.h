@@ -25,7 +25,7 @@ public:
 
     explicit Book(int);
 
-    explicit Book(string);
+    explicit Book(const string &);
 
 
     ~Book() = default;

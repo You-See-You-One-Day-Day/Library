@@ -133,7 +133,7 @@ bool Book::BeReturned() {
     return true;
 }
 
-Book::Book(string book) {
+Book::Book(const string &book) {
     vector<string> message;
     string result;
     stringstream input(book);
