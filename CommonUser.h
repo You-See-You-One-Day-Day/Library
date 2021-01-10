@@ -41,10 +41,13 @@ public:
 
 //
     //普通用户写入借阅记录
-    void writeRecord(const Book&,bool);
+    void writeRecord(const Book &, bool);
 
     //普通用户查看借阅记录
     void viewRecord();
+
+    //普通用户列表
+    static void DisplayCommonUser();
 
     //退出系统
     void exitSystem();

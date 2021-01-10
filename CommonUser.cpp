@@ -359,3 +359,20 @@ void CommonUser::exitSystem() {
 }
 
 
+void CommonUser::DisplayCommonUser() {
+    auto ap = new CommonUser();
+    int num = 0;
+    FILE *fp = fopen("CommonUser.bin", "rb+");
+    while (true) {
+        if (!fread(ap, sizeof(CommonUser), 1, fp)) {
+            delete ap;
+            break;
+        }
+        cout << "用户名：" << ap->m_username << "\t\t\t用户密码：********" << endl;
+        num++;
+    }
+    fclose(fp);
+    if (num == 0) {
+        cout << "不存在普通用户，请先创建\n";
+    }
+}

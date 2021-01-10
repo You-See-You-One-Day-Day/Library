@@ -369,3 +369,21 @@ void Administrator::exitSystem() {
     fwrite(&AdList[0], AdList.size() * sizeof(Administrator), 1, fp);
     fclose(fp);
 }
+
+void Administrator::DisplayAdministrator() {
+    auto ap = new Administrator();
+    int num = 0;
+    FILE *fp = fopen("Administrator.bin", "rb+");
+    while (true) {
+        if (!fread(ap, sizeof(Administrator), 1, fp)) {
+            delete ap;
+            break;
+        }
+        cout << "用户名：" << ap->m_username << "\t\t\t用户密码：********" << endl;
+        num++;
+    }
+    fclose(fp);
+    if (num == 0) {
+        cout << "不存在管理员用户，请先创建\n";
+    }
+}

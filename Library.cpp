@@ -195,14 +195,15 @@ bool Library::MainMenu(Administrator &a, CommonUser &b) {
     cout << "\t\t\t|*************** 1.注册     ***************｜\n";
     cout << "\t\t\t|*************** 2.登录     ***************｜\n";
     cout << "\t\t\t|*************** 3.退出     ***************｜\n";
-    cout << "\t\t\t|*************** 4.重置系统  ***************｜\n";
+    cout << "\t\t\t|*************** 4.用户列表  ***************｜\n";
+    cout << "\t\t\t|*************** 5.重置系统  ***************｜\n";
     cout << "\t\t\t===========================================\n\n";
     cout << "请输入您的选择：";
     select:
     cin >> select;
     switch (select) {
         case 0: {
-            cout << "用户文档，不存在的，想都不要想" << endl;
+            cout << "我只是只皮卡丘，我不会写用户文档" << endl;
             cout << "    　　　　 ／|\n"
                     "　 /＼ 　　 ∠＿/\n"
                     "　/　│　　 ／　／\n"
@@ -229,6 +230,10 @@ bool Library::MainMenu(Administrator &a, CommonUser &b) {
         case 3:
             return false;
         case 4: {
+            UserList();
+            goto start;
+        }
+        case 5: {
             ResetLibrary();
             goto start;
         }
@@ -477,5 +482,28 @@ void Library::ResetLibrary() {
 
     } else {
         cout << "密码错误，您未拥有该权限，请联系开发者获取密码\n";
+    }
+}
+
+void Library::UserList() {
+    cout << "您正在查询用户列表\n";
+    int select;
+    cout << "请选择您想查看的用户列表：1 管理员，2 普通用户\n";
+    select:
+    cin >> select;
+    switch (select) {
+        case 1: {
+            Administrator::DisplayAdministrator();
+            break;
+        }
+        case 2: {
+            CommonUser::DisplayCommonUser();
+            break;
+        }
+        default: {
+            cout << "没有这个选项，请重新选择：";
+            goto select;
+        }
+
     }
 }

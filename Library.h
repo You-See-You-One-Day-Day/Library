@@ -46,6 +46,9 @@ public:
     //重置系统
     static void ResetLibrary();
 
+    //用户列表
+    static void UserList();
+
 };
 
 #endif //LIBRARY_LIBRARY_H

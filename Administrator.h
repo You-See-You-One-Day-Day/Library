@@ -55,7 +55,11 @@ public:
     static void addBook();
 
     //管理员删除图书
-   static void deleteBook();
+    static void deleteBook();
+
+    //展示用户列表
+    static void DisplayAdministrator();
+
 
     //退出系统
     void exitSystem();
