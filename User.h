@@ -14,6 +14,14 @@
 #include <vector>
 #include <regex>
 #include "Book.h"
+#include <unistd.h>
+#include <netdb.h>
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
+#include <ifaddrs.h>
+
 
 using namespace std;
 

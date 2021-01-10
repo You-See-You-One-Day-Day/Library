@@ -6,24 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/Users/wuqiquan/CLionProjects/Library/Administrator.cpp
-Administrator.h
-/Users/wuqiquan/CLionProjects/Library/Administrator.h
-CommonUser.h
-/Users/wuqiquan/CLionProjects/Library/CommonUser.h
-Book.h
-/Users/wuqiquan/CLionProjects/Library/Book.h
-
-/Users/wuqiquan/CLionProjects/Library/Administrator.h
-cstdio
--
-string
--
-vector
--
-User.h
-/Users/wuqiquan/CLionProjects/Library/User.h
-
 /Users/wuqiquan/CLionProjects/Library/Book.h
 iostream
 -
@@ -42,31 +24,9 @@ algorithm
 vector
 -
 
-/Users/wuqiquan/CLionProjects/Library/CommonUser.cpp
-CommonUser.h
-/Users/wuqiquan/CLionProjects/Library/CommonUser.h
-Book.h
-/Users/wuqiquan/CLionProjects/Library/Book.h
-
-/Users/wuqiquan/CLionProjects/Library/CommonUser.h
-cstdio
--
+/Users/wuqiquan/CLionProjects/Library/User.cpp
 User.h
 /Users/wuqiquan/CLionProjects/Library/User.h
-
-/Users/wuqiquan/CLionProjects/Library/Library.cpp
-Library.h
-/Users/wuqiquan/CLionProjects/Library/Library.h
-
-/Users/wuqiquan/CLionProjects/Library/Library.h
-Administrator.h
-/Users/wuqiquan/CLionProjects/Library/Administrator.h
-CommonUser.h
-/Users/wuqiquan/CLionProjects/Library/CommonUser.h
-Book.h
-/Users/wuqiquan/CLionProjects/Library/Book.h
-unistd.h
--
 
 /Users/wuqiquan/CLionProjects/Library/User.h
 iostream
@@ -83,4 +43,10 @@ regex
 -
 Book.h
 /Users/wuqiquan/CLionProjects/Library/Book.h
+unistd.h
+-
+netdb.h
+-
+arpa/inet.h
+-
 
