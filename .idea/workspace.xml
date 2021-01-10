@@ -12,22 +12,19 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b9f0e92a-ac51-4ed2-8f47-170d2f268784" name="默认的" comment="图书管理系统1.0">
+    <list default="true" id="b9f0e92a-ac51-4ed2-8f47-170d2f268784" name="默认的" comment="图书管理系统1.1(更新重置系统功能）">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Administrator.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Administrator.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Administrator.h" beforeDir="false" afterPath="$PROJECT_DIR$/Administrator.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CommonUser.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CommonUser.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CommonUser.h" beforeDir="false" afterPath="$PROJECT_DIR$/CommonUser.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Library.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library.h" beforeDir="false" afterPath="$PROJECT_DIR$/Library.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/BookRecord.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/BookRecord.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Administrator.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Administrator.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Library.dir/Administrator.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Library.dir/Administrator.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Library.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Library.dir/CXX.includecache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Library.dir/CommonUser.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Library.dir/CommonUser.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Library.dir/Library.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Library.dir/Library.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Library.dir/User.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Library.dir/User.cpp.o" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/main.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/main.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/main.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/main.dir/main.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CommonUser.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CommonUser.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/UserOnlineRecord.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/UserOnlineRecord.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/books.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/books.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/liblibrary.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/liblibrary.a" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/main" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/main" afterDir="false" />
@@ -96,6 +93,11 @@
     </key>
   </component>
   <component name="RunManager" selected="CMake 应用程序.main">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="library" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Library" TARGET_NAME="library" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -104,11 +106,6 @@
     <configuration name="main" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Library" TARGET_NAME="main" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Library" RUN_TARGET_NAME="main">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <list>
@@ -147,7 +144,8 @@
       <workItem from="1610188143763" duration="1498000" />
       <workItem from="1610190009079" duration="2314000" />
       <workItem from="1610193456231" duration="199000" />
-      <workItem from="1610202474410" duration="1805000" />
+      <workItem from="1610202474410" duration="5221000" />
+      <workItem from="1610262216196" duration="1336000" />
     </task>
     <task id="LOCAL-00001" summary="完善用户模式大致架构">
       <created>1609250089486</created>
@@ -324,7 +322,28 @@
       <option name="project" value="LOCAL" />
       <updated>1610190156444</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="图书管理系统1.1(更新重置系统功能）">
+      <created>1610204340753</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1610204340753</updated>
+    </task>
+    <task id="LOCAL-00027" summary="图书管理系统1.1(更新重置系统功能）">
+      <created>1610204514137</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1610204514137</updated>
+    </task>
+    <task id="LOCAL-00028" summary="图书管理系统1.1(更新重置系统功能）">
+      <created>1610263161174</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1610263161174</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -400,7 +419,8 @@
     <MESSAGE value="所有功能已完成（未测试）" />
     <MESSAGE value="增加管理员批量导入功能" />
     <MESSAGE value="图书管理系统1.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="图书管理系统1.0" />
+    <MESSAGE value="图书管理系统1.1(更新重置系统功能）" />
+    <option name="LAST_COMMIT_MESSAGE" value="图书管理系统1.1(更新重置系统功能）" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
