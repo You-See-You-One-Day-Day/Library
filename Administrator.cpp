@@ -108,6 +108,7 @@ void Administrator::modifyPassword() {
                 cout << "输入错误超过三次，拒绝修改\n";
                 Online = false;
                 RecordOnline();
+                exitSystem();
                 throw;
             }
             cout << "前后密码不一致，请重新输入：\n";
