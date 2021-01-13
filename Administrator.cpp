@@ -154,6 +154,7 @@ void Administrator::deleteCommonUser() {
             break;
         }
         if (cp->getUsername() == deleteUsername) {
+            cp->returnAllBook();
             success = true;
         } else {
             CuList.push_back(*cp);

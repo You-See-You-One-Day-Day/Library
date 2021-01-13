@@ -39,7 +39,8 @@ public:
     //普通用户还书
     void returnBook();
 
-//
+    void returnAllBook();
+
     //普通用户写入借阅记录
     void writeRecord(const Book &, bool);
 

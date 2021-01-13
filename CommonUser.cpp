@@ -62,7 +62,7 @@ CommonUser::CommonUser(int) {
     cout << "您的用户名为： " << m_username << endl;
     cout << "您的密码为： " << m_password << endl;
     m_bookNumber = 0;
-    for (auto & possessBook : possessBooks) {
+    for (auto &possessBook : possessBooks) {
         possessBook = "";
     }
 }
@@ -216,7 +216,7 @@ void CommonUser::returnBook() {
     bool success = false;
     if (m_bookNumber >= 1) {
         cout << "您现在未归还的书籍有：\n";
-        for (auto & possessBook : possessBooks) {
+        for (auto &possessBook : possessBooks) {
             cout << possessBook << endl;
         }
         cout << "请输入您想要归还的图书的名字，作者，出版号或者ISBN编号：\n";
@@ -246,7 +246,6 @@ void CommonUser::returnBook() {
                 cin >> judge;
                 if (judge == 'Y') {
                     Book temp(book);
-                    book = temp.IntoString(1);
                     if (temp.BeReturned()) {
                         book = temp.IntoString(1);
                         for (auto &possessBook : possessBooks) {
@@ -376,3 +375,36 @@ void CommonUser::DisplayCommonUser() {
         cout << "不存在普通用户，请先创建\n";
     }
 }
+
+void CommonUser::returnAllBook() {
+    for (auto &possessBook : possessBooks) {
+        if (!possessBook.empty()) {
+            vector<string> BookList;
+            BookList.clear();
+            ifstream ifs;
+            ifs.open("books.txt", ios::in);
+            string book;
+            while (!ifs.eof()) {
+                getline(ifs, book);
+                Book temp(book);
+                if (temp.IntoString() == possessBook) {
+                    if (temp.BeReturned()) {
+                        book = temp.IntoString(1);
+                        possessBook = "";
+                        writeRecord(temp, false);
+                    }
+                }
+                BookList.push_back(book);
+            }
+            ifs.close();
+            remove("books.txt");
+            ofstream ofs;
+            ofs.open("books.txt", ios::out);
+            for (auto &i: BookList) {
+                ofs << i << endl;
+            }
+            ofs.close();
+        }
+    }
+}
+
